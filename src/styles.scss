@@ -16,6 +16,8 @@
   --accent-border: rgba(125, 211, 199, 0.45);
   --gold: #d7bb7a;
   --hero-lead: #d5dce7;
+  --hero-light-x: 64%;
+  --hero-light-y: 32%;
   --button-primary-text: #07100f;
   --button-secondary-bg: rgba(255, 255, 255, 0.06);
   --nav-bg: rgba(8, 10, 15, 0.88);
@@ -27,10 +29,14 @@
   --band-bg: rgba(255, 255, 255, 0.025);
   --highlight-bg: rgba(255, 255, 255, 0.04);
   --highlight-hover-bg: rgba(255, 255, 255, 0.065);
+  --section-wash: rgba(125, 211, 199, 0.035);
+  --section-wash-strong: rgba(18, 24, 33, 0.42);
   --preview-bg: rgba(8, 10, 15, 0.52);
   --preview-surface: rgba(255, 255, 255, 0.075);
   --preview-surface-strong: rgba(255, 255, 255, 0.14);
   --preview-line: rgba(229, 236, 246, 0.18);
+  --preview-chrome: rgba(255, 255, 255, 0.07);
+  --preview-depth-shadow: 0 18px 42px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   --accent-wash: rgba(125, 211, 199, 0.075);
   --card-glow: 0 26px 74px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(125, 211, 199, 0.08);
   --card-hover-glow: 0 30px 88px rgba(0, 0, 0, 0.44), 0 0 34px rgba(125, 211, 199, 0.1);
@@ -68,10 +74,14 @@
   --band-bg: rgba(255, 255, 255, 0.54);
   --highlight-bg: rgba(255, 255, 255, 0.7);
   --highlight-hover-bg: rgba(255, 255, 255, 0.94);
+  --section-wash: rgba(23, 109, 102, 0.05);
+  --section-wash-strong: rgba(232, 238, 243, 0.46);
   --preview-bg: rgba(255, 255, 255, 0.82);
   --preview-surface: rgba(15, 23, 42, 0.07);
   --preview-surface-strong: rgba(23, 109, 102, 0.18);
   --preview-line: rgba(15, 23, 42, 0.14);
+  --preview-chrome: rgba(15, 23, 42, 0.045);
+  --preview-depth-shadow: 0 18px 42px rgba(15, 23, 42, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.82);
   --accent-wash: rgba(23, 109, 102, 0.075);
   --card-glow: 0 24px 70px rgba(15, 23, 42, 0.13), 0 0 0 1px rgba(23, 109, 102, 0.08);
   --card-hover-glow: 0 30px 84px rgba(15, 23, 42, 0.18), 0 0 30px rgba(23, 109, 102, 0.1);
@@ -174,6 +184,21 @@ button:focus-visible {
   animation: hero-glow 12s ease-in-out infinite alternate;
 }
 
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    circle at var(--hero-light-x) var(--hero-light-y),
+    color-mix(in srgb, var(--accent) 10%, transparent),
+    transparent 30rem
+  );
+  content: "";
+  opacity: 0.46;
+  pointer-events: none;
+  transition: background 140ms linear;
+}
+
 .topbar {
   position: fixed;
   top: 16px;
@@ -266,8 +291,8 @@ button:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 28px;
-  padding: 54px 0 34px;
+  gap: 34px;
+  padding: 64px 0 44px;
 }
 
 .hero-copy {
@@ -454,8 +479,13 @@ li {
 .section {
   position: relative;
   display: block;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section::before {
@@ -466,13 +496,25 @@ li {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
   content: "";
-  opacity: 0.78;
+  opacity: 0.54;
+  z-index: 2;
 }
 
-.section:nth-of-type(even) {
+.section::after {
+  position: absolute;
+  inset: 18px 0;
+  z-index: 0;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accent) 3.5%, transparent), transparent 34%),
-    linear-gradient(180deg, transparent, color-mix(in srgb, var(--surface) 22%, transparent), transparent);
+    radial-gradient(ellipse at 18% 18%, var(--section-wash), transparent 42rem),
+    linear-gradient(180deg, transparent 0%, var(--section-wash-strong) 52%, transparent 100%);
+  content: "";
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  opacity: 0.44;
+  pointer-events: none;
+}
+
+.section:nth-of-type(even)::after {
+  opacity: 0.62;
 }
 
 .section-grid {
@@ -486,7 +528,7 @@ li {
 
 .section-heading.compact {
   max-width: 780px;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
 }
 
 .section-body {
@@ -499,7 +541,7 @@ li {
 .service-grid,
 .highlight-grid {
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
 .split-list article {
@@ -552,7 +594,7 @@ li {
 
 .timeline {
   display: grid;
-  gap: 18px;
+  gap: 24px;
 }
 
 .timeline-item {
@@ -583,7 +625,7 @@ li {
 .project-card {
   display: grid;
   align-content: start;
-  gap: 18px;
+  gap: 22px;
   min-height: 100%;
   transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
@@ -597,11 +639,14 @@ li {
   border: 1px solid var(--border);
   border-radius: 8px;
   background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 18%),
     linear-gradient(135deg, color-mix(in srgb, var(--accent) 11%, transparent), transparent 42%),
     var(--preview-bg);
+  box-shadow: var(--preview-depth-shadow);
   transition:
     background 220ms ease,
-    border-color 220ms ease;
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .project-preview::after {
@@ -614,12 +659,27 @@ li {
   pointer-events: none;
 }
 
+.project-preview::before {
+  position: absolute;
+  right: 10%;
+  bottom: -18%;
+  left: 10%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.16), transparent 62%);
+  content: "";
+  opacity: 0.55;
+  pointer-events: none;
+  transform: rotate(-2deg);
+}
+
 .browser-bar {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 0 12px;
   border-bottom: 1px solid var(--preview-line);
+  background: var(--preview-chrome);
 }
 
 .browser-bar span {
@@ -876,10 +936,8 @@ li {
 .recruiter-band {
   display: grid;
   gap: 24px;
-  width: calc(100% - 48px);
-  margin-inline: auto;
-  border-block: 1px solid var(--border);
-  background: var(--band-bg);
+  border-block: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  background: transparent;
   transition:
     background-color 220ms ease,
     border-color 220ms ease;
@@ -929,6 +987,11 @@ li {
   gap: 10px;
   color: var(--muted);
   font-style: normal;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 720px) {
@@ -991,7 +1054,7 @@ li {
   }
 
   .hero-grid {
-    padding-top: 86px;
+    padding-top: 96px;
   }
 
   .project-grid,
@@ -1003,9 +1066,6 @@ li {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .recruiter-band {
-    width: calc(100% - 84px);
-  }
 }
 
 @media (min-width: 1040px) {
@@ -1026,9 +1086,9 @@ li {
   .hero-grid {
     grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
     align-items: end;
-    gap: 48px;
+    gap: 60px;
     min-height: 710px;
-    padding-top: 112px;
+    padding-top: 124px;
   }
 
   .hero-panel {
@@ -1036,13 +1096,13 @@ li {
   }
 
   .section {
-    padding-top: 86px;
-    padding-bottom: 86px;
+    padding-top: 104px;
+    padding-bottom: 104px;
   }
 
   .section-grid {
     grid-template-columns: 0.7fr 1.3fr;
-    gap: 64px;
+    gap: 76px;
   }
 
   .split-list {
@@ -1073,7 +1133,6 @@ li {
   }
 
   .recruiter-band {
-    width: calc(100% - 144px);
     grid-template-columns: 0.82fr 1.18fr;
     align-items: center;
   }
@@ -1083,13 +1142,21 @@ li {
   }
 
   .contact-card {
-    grid-template-columns: 1fr auto;
-    align-items: end;
+    grid-template-columns: 1fr minmax(220px, 0.35fr);
+    align-items: start;
     padding: 42px;
   }
 
   .contact-list {
-    grid-column: 1;
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 42px;
+  }
+
+  .contact-actions {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
   }
 }
 

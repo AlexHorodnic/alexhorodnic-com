@@ -285,7 +285,9 @@
         <a [href]="portfolio.person.githubUrl" target="_blank" rel="noreferrer">GitHub</a>
         <span>{{ portfolio.person.location }}</span>
       </address>
-      <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Contact Me</a>
+      <div class="contact-actions">
+        <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Contact Me</a>
+      </div>
     </div>
   </section>
 </main>
