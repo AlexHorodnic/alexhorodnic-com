@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render portfolio heading and contact CTA', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, alexhorodnic-com');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Alex Horodnic');
+    expect(compiled.querySelector('a[href^="mailto:"]')?.textContent).toContain('Contact Me');
   });
 });
