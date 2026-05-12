@@ -140,13 +140,13 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Operations Dashboard',
       description:
-        'A responsive Angular dashboard UI for tracking operational data with clear information hierarchy and maintainable components.',
+        'Responsive Angular dashboard UI concept focused on reusable components, clean information hierarchy, and scalable frontend structure.',
       preview: 'dashboard',
       techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS'],
       highlights: [
-        'Reusable metric, chart, and table patterns for production-style interfaces',
-        'Responsive layout designed for fast scanning across desktop and mobile',
-        'Clear loading, empty, and error-state planning for real application behavior',
+        'Reusable metric, chart, and table layouts',
+        'Responsive desktop and mobile dashboard patterns',
+        'Structured loading and empty-state UI handling',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/operations-dashboard',
@@ -154,13 +154,13 @@ export const portfolioData: PortfolioData = {
     {
       title: 'SaaS Marketing Site',
       description:
-        'A polished customer-facing product frontend focused on responsive layout, SEO structure, and fast page experience.',
+        'Frontend marketing website concept focused on responsive layout, SEO-friendly structure, and clean product presentation.',
       preview: 'marketing',
       techStack: ['Angular', 'SCSS', 'SEO', 'Responsive UI'],
       highlights: [
-        'Semantic page structure with recruiter-friendly visual hierarchy',
-        'Reusable sections for product content, conversion areas, and contact',
-        'Lightweight styling approach with accessible contrast and practical performance',
+        'Responsive landing page sections and hierarchy',
+        'Conversion-focused layout and spacing',
+        'Lightweight styling with accessible contrast',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/saas-marketing-site',
@@ -168,13 +168,13 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Booking UI Prototype',
       description:
-        'A frontend booking flow prototype with service selection, responsive form states, and confirmation screens.',
+        'Frontend booking flow prototype designed around responsive forms, reusable UI patterns, and practical user interactions.',
       preview: 'booking',
       techStack: ['Angular', 'TypeScript', 'Forms', 'SCSS'],
       highlights: [
-        'Validation-friendly UI structure for common booking interactions',
-        'Mobile-first layout patterns for customer-facing workflows',
-        'Prepared for REST API integration, analytics events, and production edge cases',
+        'Validation-friendly form structure',
+        'Mobile-first booking interactions',
+        'Reusable frontend component patterns',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/booking-ui-prototype',
@@ -182,12 +182,12 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Angular Frontend Architecture',
       description:
-        'A structured Angular frontend approach for keeping content, UI sections, and styling maintainable over time.',
+        'Frontend architecture showcase demonstrating typed content, reusable sections, and maintainable Angular structure.',
       preview: 'portfolio',
       techStack: ['Angular', 'TypeScript', 'SCSS'],
       highlights: [
-        'Typed content model for safer edits and easier long-term maintenance',
-        'Semantic HTML structure for search engines, accessibility, and recruiter readability',
+        'Typed content model for safer edits',
+        'Semantic HTML structure for search engines and accessibility',
         'Lightweight component structure with no unnecessary libraries',
       ],
       liveUrl: 'https://example.com',
