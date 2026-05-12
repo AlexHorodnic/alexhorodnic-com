@@ -405,3 +405,15 @@
     </div>
   </section>
 </main>
+
+<button
+  class="scroll-top"
+  type="button"
+  aria-label="Scroll to top"
+  [class.is-visible]="showScrollTop()"
+  (click)="scrollToTop()"
+>
+  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+    <path d="m6 15 6-6 6 6" />
+  </svg>
+</button>

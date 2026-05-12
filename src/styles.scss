@@ -169,6 +169,44 @@ button:focus-visible {
     box-shadow 220ms ease;
 }
 
+.scroll-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--nav-scrolled-bg);
+  color: var(--text);
+  box-shadow: var(--card-glow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  backdrop-filter: blur(18px) saturate(130%);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 220ms ease,
+    box-shadow 180ms ease;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--card-hover-glow);
+}
+
 .hero,
 .section {
   padding: 24px;

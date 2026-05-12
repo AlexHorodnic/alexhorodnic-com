@@ -14,6 +14,7 @@ export class App implements AfterViewInit, OnDestroy {
   protected readonly activeSection = signal('about');
   protected readonly scrollProgress = signal(0);
   protected readonly isScrolled = signal(false);
+  protected readonly showScrollTop = signal(false);
   private observer?: IntersectionObserver;
 
   constructor(
@@ -64,7 +65,15 @@ export class App implements AfterViewInit, OnDestroy {
     const scrollableHeight = this.document.documentElement.scrollHeight - window.innerHeight;
     const progress = scrollableHeight > 0 ? scrollTop / scrollableHeight : 0;
     this.isScrolled.set(scrollTop > 18);
+    this.showScrollTop.set(scrollTop > 520);
     this.scrollProgress.set(Math.min(Math.max(progress, 0), 1));
   }
 
+  protected scrollToTop(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
