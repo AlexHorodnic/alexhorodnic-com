@@ -179,20 +179,6 @@ export const portfolioData: PortfolioData = {
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/booking-ui-prototype',
     },
-    {
-      title: 'Angular Frontend Architecture',
-      description:
-        'Frontend architecture showcase demonstrating typed content, reusable sections, and maintainable Angular structure.',
-      preview: 'portfolio',
-      techStack: ['Angular', 'TypeScript', 'SCSS'],
-      highlights: [
-        'Typed content model for safer edits',
-        'Semantic HTML structure for search engines and accessibility',
-        'Lightweight component structure with no unnecessary libraries',
-      ],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/alexhorodnic/portfolio',
-    },
   ],
   services: [
     {
