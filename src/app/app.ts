@@ -67,15 +67,4 @@ export class App implements AfterViewInit, OnDestroy {
     this.scrollProgress.set(Math.min(Math.max(progress, 0), 1));
   }
 
-  @HostListener('window:pointermove', ['$event'])
-  protected updateHeroLight(event: PointerEvent): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    const x = (event.clientX / window.innerWidth) * 100;
-    const y = (event.clientY / window.innerHeight) * 100;
-    this.document.documentElement.style.setProperty('--hero-light-x', `${x.toFixed(2)}%`);
-    this.document.documentElement.style.setProperty('--hero-light-y', `${y.toFixed(2)}%`);
-  }
 }

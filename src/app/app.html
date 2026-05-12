@@ -234,8 +234,20 @@
             }
           </ul>
           <div class="card-links">
-            <a [href]="project.liveUrl" target="_blank" rel="noreferrer">Live Project</a>
-            <a [href]="project.githubUrl" target="_blank" rel="noreferrer">GitHub</a>
+            <a [href]="project.liveUrl" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+              <span>Live Project</span>
+            </a>
+            <a [href]="project.githubUrl" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M9 19c-4 1.5-4-2.5-6-3" />
+                <path d="M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6A4.6 4.6 0 0 0 18.8 7c.1-.3.5-1.8-.1-3.5 0 0-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.4 0C6.4 3.2 5.3 3.5 5.3 3.5 4.7 5.2 5.1 6.7 5.2 7A4.6 4.6 0 0 0 4 10.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22" />
+              </svg>
+              <span>GitHub</span>
+            </a>
           </div>
         </article>
       }
@@ -250,7 +262,57 @@
     <div class="service-grid">
       @for (service of portfolio.services; track service.title) {
         <article class="service-card">
-          <h3>{{ service.title }}</h3>
+          <div class="service-title">
+            <span class="service-icon" aria-hidden="true">
+              @switch (service.icon) {
+                @case ('tool') {
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <path d="m14.7 6.3 3 3" />
+                    <path d="M4 20 14.7 9.3" />
+                    <path d="M16 4a4 4 0 0 0 4 4l-3.5 3.5-4-4L16 4Z" />
+                  </svg>
+                }
+                @case ('layout') {
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="16" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="M9 20V9" />
+                  </svg>
+                }
+                @case ('code') {
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <path d="m8 9-4 3 4 3" />
+                    <path d="m16 9 4 3-4 3" />
+                    <path d="m14 5-4 14" />
+                  </svg>
+                }
+                @case ('ui') {
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <rect x="4" y="5" width="16" height="14" rx="2" />
+                    <path d="M8 9h8" />
+                    <path d="M8 13h4" />
+                    <path d="M15 13h1" />
+                  </svg>
+                }
+                @case ('speed') {
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M5 19a8 8 0 1 1 14 0" />
+                    <path d="m13 13 4-4" />
+                    <path d="M12 19h.01" />
+                  </svg>
+                }
+                @case ('agency') {
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M4 20V8l8-4 8 4v12" />
+                    <path d="M9 20v-6h6v6" />
+                    <path d="M8 10h.01" />
+                    <path d="M16 10h.01" />
+                  </svg>
+                }
+              }
+            </span>
+            <h3>{{ service.title }}</h3>
+          </div>
           <p>{{ service.description }}</p>
         </article>
       }
@@ -280,10 +342,37 @@
         </p>
       </div>
       <address class="contact-list">
-        <a [href]="'mailto:' + portfolio.person.email">{{ portfolio.person.email }}</a>
-        <a [href]="portfolio.person.linkedinUrl" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a [href]="portfolio.person.githubUrl" target="_blank" rel="noreferrer">GitHub</a>
-        <span>{{ portfolio.person.location }}</span>
+        <a class="contact-item" [href]="'mailto:' + portfolio.person.email">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 6h16v12H4z" />
+            <path d="m4 7 8 6 8-6" />
+          </svg>
+          <span>{{ portfolio.person.email }}</span>
+        </a>
+        <a class="contact-item" [href]="portfolio.person.linkedinUrl" target="_blank" rel="noreferrer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M8 11v7" />
+            <path d="M8 8v.01" />
+            <path d="M12 18v-7" />
+            <path d="M12 14a3 3 0 0 1 6 0v4" />
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-item" [href]="portfolio.person.githubUrl" target="_blank" rel="noreferrer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M9 19c-4 1.5-4-2.5-6-3" />
+            <path d="M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6A4.6 4.6 0 0 0 18.8 7c.1-.3.5-1.8-.1-3.5 0 0-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.4 0C6.4 3.2 5.3 3.5 5.3 3.5 4.7 5.2 5.1 6.7 5.2 7A4.6 4.6 0 0 0 4 10.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <span class="contact-item">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+          <span>{{ portfolio.person.location }}</span>
+        </span>
       </address>
       <div class="contact-actions">
         <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Contact Me</a>

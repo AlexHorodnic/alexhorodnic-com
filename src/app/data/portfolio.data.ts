@@ -29,6 +29,7 @@ export interface ProjectItem {
 export interface ServiceItem {
   readonly title: string;
   readonly description: string;
+  readonly icon: 'tool' | 'layout' | 'code' | 'ui' | 'speed' | 'agency';
 }
 
 export interface PortfolioData {
@@ -200,26 +201,32 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Frontend bug fixing',
       description: 'Layout issues, broken interactions, TypeScript errors, and UI polish work.',
+      icon: 'tool',
     },
     {
       title: 'Landing pages',
       description: 'Responsive marketing pages with clean structure, strong hierarchy, and practical SEO.',
+      icon: 'layout',
     },
     {
       title: 'Angular development',
       description: 'Feature implementation, component refactors, API integration, and maintainable UI flows.',
+      icon: 'code',
     },
     {
       title: 'UI implementation',
       description: 'Careful conversion of Figma designs into accessible, production-ready interfaces.',
+      icon: 'ui',
     },
     {
       title: 'Performance improvements',
       description: 'Focused audits and front-end optimizations that improve perceived speed and usability.',
+      icon: 'speed',
     },
     {
       title: 'Agency overflow work',
       description: 'Reliable extra frontend capacity for scoped client work and delivery deadlines.',
+      icon: 'agency',
     },
   ],
   recruiterHighlights: [
