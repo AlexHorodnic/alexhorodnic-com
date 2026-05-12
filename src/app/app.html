@@ -57,10 +57,15 @@
         <p class="hero-text">{{ portfolio.hero.valueProposition }}</p>
 
         <div class="actions" aria-label="Primary actions">
-          <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Contact Me</a>
+          <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Get in touch</a>
           <a class="button button-secondary" href="#projects">View Projects</a>
           <a class="button button-ghost" [href]="portfolio.person.cvUrl" download="Alex-Horodnic-CV.pdf">
-            Download CV
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 3v12" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+            <span>Download CV</span>
           </a>
         </div>
       </div>
@@ -109,6 +114,24 @@
       @for (skill of portfolio.skills; track skill) {
         <span class="skill-pill">{{ skill }}</span>
       }
+    </div>
+    <div class="skill-secondary">
+      <div>
+        <p class="skill-group-title">Supporting tools</p>
+        <div class="skill-grid skill-grid-secondary" aria-label="Supporting frontend tools">
+          @for (skill of portfolio.supportingSkills; track skill) {
+            <span class="skill-pill">{{ skill }}</span>
+          }
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-title">Backend exposure</p>
+        <div class="skill-grid skill-grid-secondary" aria-label="Secondary backend exposure">
+          @for (skill of portfolio.backendExposure; track skill) {
+            <span class="skill-pill">{{ skill }}</span>
+          }
+        </div>
+      </div>
     </div>
   </section>
 
@@ -339,8 +362,8 @@
         <p class="eyebrow">Contact</p>
         <h2 id="contact-title">Let’s talk about your frontend needs.</h2>
         <p>
-          Send a short message with the role, project, or problem you need help with. I will reply with
-          availability and next steps.
+          Feel free to reach out about frontend roles, collaborations, or product opportunities. I’ll reply
+          with availability and next steps.
         </p>
       </div>
       <address class="contact-list">
@@ -377,7 +400,7 @@
         </span>
       </address>
       <div class="contact-actions">
-        <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Contact Me</a>
+        <a class="button button-primary" [href]="'mailto:' + portfolio.person.email">Get in touch</a>
       </div>
     </div>
   </section>

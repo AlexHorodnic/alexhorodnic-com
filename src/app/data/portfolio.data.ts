@@ -53,6 +53,8 @@ export interface PortfolioData {
     readonly lookingFor: string;
   };
   readonly skills: readonly string[];
+  readonly supportingSkills: readonly string[];
+  readonly backendExposure: readonly string[];
   readonly experience: readonly ExperienceItem[];
   readonly projects: readonly ProjectItem[];
   readonly services: readonly ServiceItem[];
@@ -70,11 +72,11 @@ export const portfolioData: PortfolioData = {
     cvUrl: '/Alex-Horodnic-CV.pdf',
   },
   hero: {
-    eyebrow: 'Available for frontend roles and contract work',
+    eyebrow: 'Frontend Developer',
     valueProposition:
-      'I build clean, maintainable Angular interfaces with strong attention to UX, performance, and delivery quality.',
+      'I build responsive, maintainable Angular applications with strong attention to UI quality, SEO, performance, and production reliability.',
     stats: [
-      { label: 'Experience', value: '3+ years' },
+      { label: 'Experience', value: 'Production Experience' },
       { label: 'Main stack', value: 'Angular + TypeScript' },
       { label: 'Location', value: 'Athens, Greece' },
       { label: 'Availability', value: 'Open to interviews' },
@@ -82,60 +84,55 @@ export const portfolioData: PortfolioData = {
   },
   about: {
     summary:
-      'Frontend developer focused on shipping dependable product interfaces for real users. I enjoy turning product requirements and Figma designs into responsive Angular applications that are easy to maintain and practical to extend.',
+      'Frontend Developer with experience building responsive Angular applications and customer-facing digital products using TypeScript, JavaScript, HTML, and CSS. Currently working at Public Group, contributing to frontend development, SEO optimization, performance improvements, and production-level applications.',
     strengths: [
-      'Angular feature development with standalone components and strict TypeScript',
-      'Responsive UI implementation with HTML, CSS, SCSS, and accessibility in mind',
-      'API integration, state handling, bug fixing, and pragmatic performance improvements',
+      'Building maintainable Angular interfaces with TypeScript, reusable components, and practical frontend architecture',
+      'Implementing responsive UI from product requirements and design input with attention to accessibility and detail',
+      'Collaborating with design, QA, product, and development teams to deliver production-ready customer-facing features',
     ],
     lookingFor:
-      'I am looking for frontend roles, product teams, and agency collaborations where clear communication, code quality, and thoughtful UI execution matter.',
+      'I am looking for frontend-focused roles where Angular, responsive UI, production quality, and maintainable frontend development are valued.',
   },
   skills: [
     'Angular',
     'TypeScript',
     'JavaScript',
-    'RxJS',
     'HTML',
-    'CSS',
-    'SCSS',
+    'CSS / SCSS',
     'Responsive UI',
-    'API integration',
-    'Performance optimization',
+    'SEO Optimization',
+    'REST APIs',
+    'Performance Optimization',
+    'Accessibility',
     'Git',
-    'Testing basics',
+    'Jira',
+    'Figma',
   ],
+  supportingSkills: ['RxJS', 'React', 'Docker', 'Google Analytics', 'Google Tag Manager', 'Bitbucket'],
+  backendExposure: ['Java', 'Spring Boot', 'Oracle', 'MariaDB', 'Oracle ATG'],
   experience: [
     {
-      company: 'Product Studio',
+      company: 'Public Group',
       role: 'Frontend Developer',
-      dates: '2024 - Present',
-      location: 'Remote',
+      dates: 'July 2022 - Present',
+      location: 'Athens, Greece',
       achievements: [
-        'Built Angular dashboard features used by internal operations teams to review customer activity faster.',
-        'Improved reusable UI patterns, reducing duplicate component code across several product screens.',
-        'Worked closely with backend developers to integrate REST APIs with clear loading, empty, and error states.',
+        'Develop and maintain customer-facing Angular applications used in production environments.',
+        'Contribute to frontend modernization, responsive UI improvements, and production issue resolution.',
+        'Support SEO optimization and frontend performance improvements across digital products.',
+        'Collaborate with product, design, QA, and development teams in agile workflows using Git, Jira, and Bitbucket.',
       ],
     },
     {
-      company: 'Digital Agency',
-      role: 'Junior Frontend Developer',
-      dates: '2022 - 2024',
-      location: 'Hybrid',
+      company: 'Western Union',
+      role: 'Customer & Technical Support Associate',
+      dates: 'April 2021 - 2022',
+      location: 'Athens, Greece',
       achievements: [
-        'Implemented responsive landing pages and product pages for clients across SaaS and local service businesses.',
-        'Helped reduce layout bugs on mobile by standardizing spacing, breakpoints, and component behavior.',
-        'Maintained client websites, fixed production issues, and communicated progress clearly with project managers.',
-      ],
-    },
-    {
-      company: 'Freelance',
-      role: 'Frontend Developer',
-      dates: '2021 - 2022',
-      location: 'Remote',
-      achievements: [
-        'Delivered small business websites and UI updates with clear scope, timelines, and handoff notes.',
-        'Converted static designs into fast, responsive pages with practical SEO and accessibility improvements.',
+        'Supported customers and agents across Europe with transaction-related inquiries, account verification, and technical support issues.',
+        'Handled documentation verification and escalated complex cases through Salesforce CRM to appropriate internal departments.',
+        'Assisted with troubleshooting transaction workflows and resolving customer issues in a fast-paced international environment.',
+        'Maintained strong communication and problem-solving standards while working across international support operations.',
       ],
     },
   ],
@@ -143,13 +140,13 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Operations Dashboard',
       description:
-        'A responsive Angular dashboard concept for tracking customers, tasks, and key operational metrics.',
+        'A responsive Angular dashboard UI for tracking operational data with clear information hierarchy and maintainable components.',
       preview: 'dashboard',
       techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS'],
       highlights: [
-        'Clean component structure with reusable metric and table patterns',
-        'Designed for fast scanning by support and operations teams',
-        'Includes realistic empty, loading, and error-state planning',
+        'Reusable metric, chart, and table patterns for production-style interfaces',
+        'Responsive layout designed for fast scanning across desktop and mobile',
+        'Clear loading, empty, and error-state planning for real application behavior',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/operations-dashboard',
@@ -157,13 +154,13 @@ export const portfolioData: PortfolioData = {
     {
       title: 'SaaS Marketing Site',
       description:
-        'A polished product website layout built for credibility, conversion, and fast mobile performance.',
+        'A polished customer-facing product frontend focused on responsive layout, SEO structure, and fast page experience.',
       preview: 'marketing',
-      techStack: ['Angular', 'SCSS', 'Responsive UI'],
+      techStack: ['Angular', 'SCSS', 'SEO', 'Responsive UI'],
       highlights: [
-        'Recruiter-friendly visual hierarchy and accessible contrast',
-        'Reusable sections for pricing, features, testimonials, and contact',
-        'Optimized layout without unnecessary animation or heavy dependencies',
+        'Semantic page structure with recruiter-friendly visual hierarchy',
+        'Reusable sections for product content, conversion areas, and contact',
+        'Lightweight styling approach with accessible contrast and practical performance',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/saas-marketing-site',
@@ -171,27 +168,27 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Booking UI Prototype',
       description:
-        'A frontend booking flow prototype with service selection, date choices, and confirmation states.',
+        'A frontend booking flow prototype with service selection, responsive form states, and confirmation screens.',
       preview: 'booking',
-      techStack: ['TypeScript', 'Angular', 'Forms', 'SCSS'],
+      techStack: ['Angular', 'TypeScript', 'Forms', 'SCSS'],
       highlights: [
-        'Clear form structure and validation-friendly layout',
-        'Mobile-first interaction patterns for common booking tasks',
-        'Prepared for backend API integration and analytics events',
+        'Validation-friendly UI structure for common booking interactions',
+        'Mobile-first layout patterns for customer-facing workflows',
+        'Prepared for REST API integration, analytics events, and production edge cases',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/booking-ui-prototype',
     },
     {
-      title: 'Portfolio System',
+      title: 'Angular Frontend Architecture',
       description:
-        'A personal portfolio architecture that keeps content editable from a single typed data source.',
+        'A structured Angular frontend approach for keeping content, UI sections, and styling maintainable over time.',
       preview: 'portfolio',
       techStack: ['Angular', 'TypeScript', 'SCSS'],
       highlights: [
-        'Strict typed content model for fast updates',
-        'Semantic HTML structure for recruiters and search engines',
-        'Lightweight design system with focused, maintainable styles',
+        'Typed content model for safer edits and easier long-term maintenance',
+        'Semantic HTML structure for search engines, accessibility, and recruiter readability',
+        'Lightweight component structure with no unnecessary libraries',
       ],
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/alexhorodnic/portfolio',
@@ -199,41 +196,41 @@ export const portfolioData: PortfolioData = {
   ],
   services: [
     {
-      title: 'Frontend bug fixing',
-      description: 'Layout issues, broken interactions, TypeScript errors, and UI polish work.',
+      title: 'Frontend debugging',
+      description: 'Layout issues, broken interactions, responsive bugs, TypeScript errors, and UI polish.',
       icon: 'tool',
     },
     {
       title: 'Landing pages',
-      description: 'Responsive marketing pages with clean structure, strong hierarchy, and practical SEO.',
+      description: 'Responsive marketing and product pages with clean structure, strong hierarchy, and practical SEO.',
       icon: 'layout',
     },
     {
-      title: 'Angular development',
-      description: 'Feature implementation, component refactors, API integration, and maintainable UI flows.',
+      title: 'Angular applications',
+      description: 'Feature implementation, component refactors, REST API integration, and maintainable UI flows.',
       icon: 'code',
     },
     {
       title: 'UI implementation',
-      description: 'Careful conversion of Figma designs into accessible, production-ready interfaces.',
+      description: 'Careful conversion of Figma designs and product requirements into production-ready interfaces.',
       icon: 'ui',
     },
     {
-      title: 'Performance improvements',
-      description: 'Focused audits and front-end optimizations that improve perceived speed and usability.',
+      title: 'Frontend performance',
+      description: 'Focused frontend improvements for perceived speed, SEO quality, and user experience.',
       icon: 'speed',
     },
     {
-      title: 'Agency overflow work',
-      description: 'Reliable extra frontend capacity for scoped client work and delivery deadlines.',
+      title: 'Interface polishing',
+      description: 'Refined spacing, states, accessibility details, and visual consistency for existing interfaces.',
       icon: 'agency',
     },
   ],
   recruiterHighlights: [
-    'Reliable communication',
-    'Production experience',
-    'Clean maintainable code',
-    'Fast onboarding',
-    'Strong UI attention to detail',
+    'Production Angular applications',
+    'Responsive UI implementation',
+    'Component-driven frontend systems',
+    'SEO & frontend performance',
+    'Production-ready Angular workflows',
   ],
 };
