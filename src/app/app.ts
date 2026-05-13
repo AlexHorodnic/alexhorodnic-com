@@ -30,7 +30,7 @@ export class App implements AfterViewInit, OnDestroy {
 
     history.scrollRestoration = 'manual';
     requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
-    requestAnimationFrame(() => this.hideInitialLoader());
+    requestAnimationFrame(() => this.document.documentElement.classList.add('app-ready'));
 
     const sectionIds = ['about', 'experience', 'projects', 'contact'];
     const sections = sectionIds
@@ -81,14 +81,4 @@ export class App implements AfterViewInit, OnDestroy {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  private hideInitialLoader(): void {
-    const loader = this.document.getElementById('initial-loader');
-
-    if (!loader) {
-      return;
-    }
-
-    loader.classList.add('is-hidden');
-    window.setTimeout(() => loader.remove(), 260);
-  }
 }

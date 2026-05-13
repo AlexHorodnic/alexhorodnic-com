@@ -60,81 +60,20 @@
       display: block;
       min-height: 100vh;
       background: inherit;
-    }
-
-    .initial-loader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle at 50% 36%, rgba(125, 211, 199, 0.12), transparent 24rem),
-        #080a0f;
-      color: #f4f7fb;
-      transition:
-        opacity 220ms ease,
-        visibility 220ms ease;
-    }
-
-    :root.theme-light .initial-loader {
-      background:
-        radial-gradient(circle at 50% 36%, rgba(23, 109, 102, 0.12), transparent 24rem),
-        #f8fafc;
-      color: #111827;
-    }
-
-    .initial-loader.is-hidden {
       opacity: 0;
       visibility: hidden;
-      pointer-events: none;
+      transition:
+        opacity 180ms ease,
+        visibility 180ms ease;
     }
 
-    .initial-loader__brand {
-      display: grid;
-      gap: 10px;
-      text-align: center;
-      animation: initial-loader-pulse 1.4s ease-in-out infinite alternate;
-    }
-
-    .initial-loader__name {
-      font-size: clamp(1.4rem, 5vw, 2rem);
-      font-weight: 800;
-      line-height: 1.1;
-    }
-
-    .initial-loader__role {
-      color: #b9f3ea;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    :root.theme-light .initial-loader__role {
-      color: #0f5e58;
-    }
-
-    @keyframes initial-loader-pulse {
-      from {
-        opacity: 0.72;
-        transform: translateY(2px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    :root.app-ready app-root {
+      opacity: 1;
+      visibility: visible;
     }
   </style>
 </head>
 <body>
-  <div class="initial-loader" id="initial-loader" aria-label="Loading portfolio">
-    <div class="initial-loader__brand">
-      <strong class="initial-loader__name">Alex Horodnic</strong>
-      <span class="initial-loader__role">Frontend Developer</span>
-    </div>
-  </div>
   <app-root></app-root>
 </body>
 </html>
