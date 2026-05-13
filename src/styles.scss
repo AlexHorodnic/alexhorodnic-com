@@ -165,8 +165,7 @@ button:focus-visible {
   transform-origin: left center;
   transition:
     transform 90ms linear,
-    background-color 220ms ease,
-    box-shadow 220ms ease;
+    background-color 220ms ease;
 }
 
 .scroll-top {
@@ -192,8 +191,7 @@ button:focus-visible {
     opacity 180ms ease,
     transform 180ms ease,
     border-color 180ms ease,
-    background-color 220ms ease,
-    box-shadow 180ms ease;
+    background-color 220ms ease;
 }
 
 .scroll-top.is-visible {
@@ -204,7 +202,6 @@ button:focus-visible {
 
 .scroll-top:hover {
   border-color: var(--accent-border);
-  box-shadow: var(--card-hover-glow);
 }
 
 .hero,
@@ -251,7 +248,6 @@ button:focus-visible {
   opacity: 0.14;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  animation: hero-grid-drift 18s linear infinite;
 }
 
 .topbar {
@@ -274,9 +270,7 @@ button:focus-visible {
   transform: translateX(-50%);
   transition:
     background-color 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    backdrop-filter 220ms ease;
+    border-color 220ms ease;
 }
 
 .topbar.is-scrolled {
@@ -514,7 +508,6 @@ li {
   transition:
     background 220ms ease,
     border-color 220ms ease,
-    box-shadow 220ms ease,
     color 220ms ease;
 }
 
@@ -526,7 +519,6 @@ li {
 
 .stat-card:hover {
   border-color: var(--accent-border);
-  box-shadow: var(--card-hover-glow);
 }
 
 .stat-card span,
@@ -583,6 +575,26 @@ li {
 .section-heading.compact {
   max-width: 780px;
   margin-bottom: 36px;
+}
+
+.defer-placeholder {
+  min-height: 120px;
+}
+
+.defer-placeholder-timeline {
+  min-height: 360px;
+}
+
+.defer-placeholder-projects {
+  min-height: 520px;
+}
+
+.defer-placeholder-services {
+  min-height: 260px;
+}
+
+.defer-placeholder-highlights {
+  min-height: 180px;
 }
 
 .section-body {
@@ -725,8 +737,7 @@ li {
   box-shadow: var(--preview-depth-shadow);
   transition:
     background 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease;
+    border-color 220ms ease;
 }
 
 .project-preview::after {
@@ -945,7 +956,6 @@ li {
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 36%),
     var(--card-hover-bg);
-  box-shadow: var(--card-hover-glow);
 }
 
 .tag-row {
@@ -1299,15 +1309,5 @@ li {
 
   to {
     transform: translate3d(5%, -3%, 0) scale(1.04);
-  }
-}
-
-@keyframes hero-grid-drift {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 44px 44px;
   }
 }

@@ -61,15 +61,14 @@
       min-height: 100vh;
       background: inherit;
       opacity: 0;
-      visibility: hidden;
+      pointer-events: none;
       transition:
-        opacity 180ms ease,
-        visibility 180ms ease;
+        opacity 180ms ease;
     }
 
     :root.app-ready app-root {
       opacity: 1;
-      visibility: visible;
+      pointer-events: auto;
     }
   </style>
 </head>

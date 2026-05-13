@@ -1,5 +1,5 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, HostListener, Inject, OnDestroy, PLATFORM_ID, signal } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID, signal } from '@angular/core';
 
 import { portfolioData } from './data/portfolio.data';
 import { ThemeService } from './services/theme.service';
@@ -16,6 +16,17 @@ export class App implements AfterViewInit, OnDestroy {
   protected readonly isScrolled = signal(false);
   protected readonly showScrollTop = signal(false);
   private observer?: IntersectionObserver;
+  private scrollFrame = 0;
+  private readonly scheduleScrollUpdate = (): void => {
+    if (this.scrollFrame !== 0) {
+      return;
+    }
+
+    this.scrollFrame = window.requestAnimationFrame(() => {
+      this.scrollFrame = 0;
+      this.updateScrollState();
+    });
+  };
 
   constructor(
     protected readonly themeService: ThemeService,
@@ -30,7 +41,7 @@ export class App implements AfterViewInit, OnDestroy {
 
     history.scrollRestoration = 'manual';
     requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
-    requestAnimationFrame(() => this.document.documentElement.classList.add('app-ready'));
+    this.document.documentElement.classList.add('app-ready');
 
     const sectionIds = ['about', 'experience', 'projects', 'contact'];
     const sections = sectionIds
@@ -51,16 +62,22 @@ export class App implements AfterViewInit, OnDestroy {
     );
 
     sections.forEach((section) => this.observer?.observe(section));
-    this.updateScrollProgress();
+    window.addEventListener('scroll', this.scheduleScrollUpdate, { passive: true });
+    window.addEventListener('resize', this.scheduleScrollUpdate, { passive: true });
+    this.updateScrollState();
   }
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
+    window.removeEventListener('scroll', this.scheduleScrollUpdate);
+    window.removeEventListener('resize', this.scheduleScrollUpdate);
+
+    if (this.scrollFrame !== 0) {
+      window.cancelAnimationFrame(this.scrollFrame);
+    }
   }
 
-  @HostListener('window:scroll')
-  @HostListener('window:resize')
-  protected updateScrollProgress(): void {
+  private updateScrollState(): void {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
@@ -70,7 +87,7 @@ export class App implements AfterViewInit, OnDestroy {
     const progress = scrollableHeight > 0 ? scrollTop / scrollableHeight : 0;
     this.isScrolled.set(scrollTop > 18);
     this.showScrollTop.set(scrollTop > 520);
-    this.scrollProgress.set(Math.min(Math.max(progress, 0), 1));
+    this.scrollProgress.set(Math.round(Math.min(Math.max(progress, 0), 1) * 1000) / 1000);
   }
 
   protected scrollToTop(): void {
