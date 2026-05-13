@@ -41,7 +41,6 @@ export class App implements AfterViewInit, OnDestroy {
 
     history.scrollRestoration = 'manual';
     requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
-    this.document.documentElement.classList.add('app-ready');
 
     const sectionIds = ['about', 'experience', 'projects', 'contact'];
     const sections = sectionIds
