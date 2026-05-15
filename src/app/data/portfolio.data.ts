@@ -20,10 +20,16 @@ export interface ProjectItem {
   readonly title: string;
   readonly description: string;
   readonly preview: 'dashboard' | 'marketing' | 'booking' | 'portfolio';
+  readonly previewImages?: readonly {
+    readonly src: string;
+    readonly alt: string;
+  }[];
   readonly techStack: readonly string[];
   readonly highlights: readonly string[];
   readonly liveUrl: string;
+  readonly liveLabel?: string;
   readonly githubUrl: string;
+  readonly githubLabel?: string;
 }
 
 export interface ServiceItem {
@@ -140,16 +146,20 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Operations Dashboard',
       description:
-        'Responsive Angular dashboard UI concept focused on reusable components, clean information hierarchy, and scalable frontend structure.',
+        'Responsive Angular SaaS dashboard focused on workflow management, operational analytics, scalable component architecture, and polished enterprise-grade UI interactions.',
       preview: 'dashboard',
-      techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS'],
+      techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS', 'Angular CDK', 'Responsive UI'],
       highlights: [
-        'Reusable metric, chart, and table layouts',
-        'Responsive desktop and mobile dashboard patterns',
-        'Structured loading and empty-state UI handling',
+        'Built enterprise-style workflow management experience with interactive kanban operations board',
+        'Designed responsive multi-device dashboard architecture optimized for desktop and mobile workflows',
+        'Developed reusable Angular component system for analytics, task management, and operational monitoring',
+        'Implemented advanced UI states including drag-and-drop interactions, task activity flows, blockers, and contextual detail drawers',
+        'Crafted premium dark-theme SaaS interface with semantic color systems, accessibility considerations, and polished microinteractions',
       ],
-      liveUrl: 'https://example.com',
+      liveUrl: 'https://operations.alexhorodnic.com',
+      liveLabel: 'Open Dashboard',
       githubUrl: 'https://github.com/alexhorodnic/operations-dashboard',
+      githubLabel: 'View Source',
     },
     {
       title: 'SaaS Marketing Site',
