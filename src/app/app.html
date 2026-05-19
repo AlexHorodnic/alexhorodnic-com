@@ -176,7 +176,11 @@
           <article class="project-card">
             <div
               class="project-preview"
-              [class]="'project-preview project-preview--' + project.preview"
+              [class]="
+                project.previewImages?.length
+                  ? 'project-preview project-preview--image'
+                  : 'project-preview project-preview--' + project.preview
+              "
               aria-hidden="true"
             >
               <div class="browser-bar">

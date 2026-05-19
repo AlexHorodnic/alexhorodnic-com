@@ -148,6 +148,12 @@ export const portfolioData: PortfolioData = {
       description:
         'Responsive Angular SaaS dashboard focused on workflow management, operational analytics, scalable component architecture, and polished enterprise-grade UI interactions.',
       preview: 'dashboard',
+      previewImages: [
+        {
+          src: '/featured-projects/operations-dashboard/overview.png',
+          alt: 'Operations Dashboard overview screenshot',
+        },
+      ],
       techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS', 'Angular CDK', 'Responsive UI'],
       highlights: [
         'Built enterprise-style workflow management experience with interactive kanban operations board',

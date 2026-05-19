@@ -800,6 +800,11 @@ li {
   padding: 14px;
 }
 
+.project-preview--image::after,
+.project-preview--image::before {
+  content: none;
+}
+
 .project-preview-gallery img {
   width: 100%;
   height: 100%;
@@ -1176,6 +1181,10 @@ li {
 @media (min-width: 720px) {
   .project-preview-gallery {
     grid-template-columns: 1.45fr 0.95fr;
+  }
+
+  .project-preview-gallery:has(img:only-child) {
+    grid-template-columns: 1fr;
   }
 
   .project-preview-gallery img:first-child {
