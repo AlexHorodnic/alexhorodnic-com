@@ -623,11 +623,6 @@ li {
   padding-bottom: 68px;
 }
 
-.section > * {
-  position: relative;
-  z-index: 1;
-}
-
 .section::before {
   position: absolute;
   top: 0;

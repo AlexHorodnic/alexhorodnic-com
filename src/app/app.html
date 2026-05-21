@@ -7,7 +7,7 @@
 <main class="site-shell">
   <header class="hero" id="top">
     <nav class="topbar" [class.is-scrolled]="isScrolled()" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Back to top" (click)="closeNavigation()">
+      <a class="brand" href="/" aria-label="Back to top" (click)="scrollToSection($event, 'top')">
         <span>{{ portfolio.person.name }}</span>
       </a>
       <div
@@ -17,45 +17,45 @@
         aria-label="Page sections"
       >
         <a
-          href="#skills"
+          href="/"
           [class.is-active]="activeSection() === 'skills'"
           [attr.aria-current]="activeSection() === 'skills' ? 'page' : null"
-          (click)="activateSection('skills')"
+          (click)="scrollToSection($event, 'skills')"
           >Skills</a
         >
         <a
-          href="#projects"
+          href="/"
           [class.is-active]="activeSection() === 'projects'"
           [attr.aria-current]="activeSection() === 'projects' ? 'page' : null"
-          (click)="activateSection('projects')"
+          (click)="scrollToSection($event, 'projects')"
           >Projects</a
         >
         <a
-          href="#services"
+          href="/"
           [class.is-active]="activeSection() === 'services'"
           [attr.aria-current]="activeSection() === 'services' ? 'page' : null"
-          (click)="activateSection('services')"
+          (click)="scrollToSection($event, 'services')"
           >Services</a
         >
         <a
-          href="#experience"
+          href="/"
           [class.is-active]="activeSection() === 'experience'"
           [attr.aria-current]="activeSection() === 'experience' ? 'page' : null"
-          (click)="activateSection('experience')"
+          (click)="scrollToSection($event, 'experience')"
           >Experience</a
         >
         <a
-          href="#about"
+          href="/"
           [class.is-active]="activeSection() === 'about'"
           [attr.aria-current]="activeSection() === 'about' ? 'page' : null"
-          (click)="activateSection('about')"
+          (click)="scrollToSection($event, 'about')"
           >About</a
         >
         <a
-          href="#contact"
+          href="/"
           [class.is-active]="activeSection() === 'contact'"
           [attr.aria-current]="activeSection() === 'contact' ? 'page' : null"
-          (click)="activateSection('contact')"
+          (click)="scrollToSection($event, 'contact')"
           >Contact</a
         >
       </div>
@@ -91,8 +91,8 @@
         <p class="hero-text">{{ portfolio.hero.valueProposition }}</p>
 
         <div class="actions" aria-label="Primary actions">
-          <a class="button button-primary" href="#contact">Get in touch</a>
-          <a class="button button-secondary" href="#projects">View Projects</a>
+          <a class="button button-primary" href="/" (click)="scrollToSection($event, 'contact')">Get in touch</a>
+          <a class="button button-secondary" href="/" (click)="scrollToSection($event, 'projects')">View Projects</a>
           <a class="button button-ghost" [href]="portfolio.person.cvUrl" download="Alex-Horodnic-CV.pdf">
             <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
               <path d="M12 3v12" />

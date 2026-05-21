@@ -79,6 +79,7 @@ export class App implements AfterViewInit, OnDestroy {
     }
 
     history.scrollRestoration = 'manual';
+    history.replaceState(null, '', window.location.pathname + window.location.search);
     requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
 
     const sections = this.sectionIds
@@ -153,6 +154,25 @@ export class App implements AfterViewInit, OnDestroy {
     this.activeSection.set(sectionId);
     this.lockActiveSection();
     this.closeNavigation();
+  }
+
+  protected scrollToSection(event: Event, sectionId: 'top' | (typeof this.sectionIds)[number]): void {
+    event.preventDefault();
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    this.closeNavigation();
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+
+    if (sectionId === 'top') {
+      this.scrollToTop();
+      return;
+    }
+
+    this.activateSection(sectionId);
+    this.document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   private updateActiveSectionFromScroll(scrollTop: number): void {
