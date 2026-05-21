@@ -1,0 +1,29 @@
+:host {
+  display: contents;
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.skill-pill .icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--accent-strong);
+}
+
+.skill-pill-secondary {
+  padding: 8px 11px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}

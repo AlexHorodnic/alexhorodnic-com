@@ -1,0 +1,114 @@
+:host {
+  display: block;
+}
+
+.project-card {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  min-height: 100%;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, var(--accent-wash), transparent 34%),
+    var(--card-bg);
+  box-shadow: var(--card-glow);
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 36%),
+    var(--card-hover-bg);
+}
+
+.project-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.project-copy h3 {
+  margin: 0;
+  font-size: clamp(1.22rem, 2vw, 1.42rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.project-copy p {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--hero-lead);
+  line-height: 1.65;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-row span {
+  padding: 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.project-card .check-list {
+  gap: 12px;
+}
+
+.project-card .check-list li {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding-top: 2px;
+  margin-top: auto;
+}
+
+.card-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.card-links a:hover {
+  color: var(--text);
+}
+
+.card-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.45);
+  transform-origin: left center;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.card-links a:hover::after {
+  opacity: 0.75;
+  transform: scaleX(1);
+}

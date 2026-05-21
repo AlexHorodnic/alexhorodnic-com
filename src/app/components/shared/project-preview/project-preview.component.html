@@ -1,0 +1,78 @@
+@let item = project();
+
+<a
+  class="project-preview"
+  [class]="
+    item.previewImages?.length
+      ? 'project-preview project-preview--image'
+      : 'project-preview project-preview--' + item.preview
+  "
+  [href]="item.liveUrl"
+  target="_blank"
+  rel="noopener noreferrer"
+  [attr.aria-label]="'Open ' + item.title + ' project'"
+>
+  <div class="browser-bar">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  @if (item.previewImages?.length) {
+    <div class="project-preview-gallery">
+      @for (image of item.previewImages; track image.src) {
+        <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+      }
+    </div>
+  } @else {
+    @switch (item.preview) {
+      @case ('dashboard') {
+        <div class="preview-dashboard">
+          <div class="preview-sidebar"></div>
+          <div class="preview-content">
+            <div class="preview-metrics">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="preview-chart"></div>
+            <div class="preview-table">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      }
+      @case ('marketing') {
+        <div class="preview-marketing">
+          <div class="preview-hero-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="preview-cta"></div>
+          <div class="preview-feature-row">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      }
+      @case ('booking') {
+        <div class="preview-booking">
+          <div class="preview-calendar">
+            @for (day of [1, 2, 3, 4, 5, 6, 7, 8, 9]; track day) {
+              <span></span>
+            }
+          </div>
+          <div class="preview-form">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      }
+    }
+  }
+</a>

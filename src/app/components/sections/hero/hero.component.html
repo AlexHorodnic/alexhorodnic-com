@@ -1,0 +1,35 @@
+<section class="hero" id="top">
+  <div class="hero-grid" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">{{ portfolio.person.name }}</h1>
+      <p class="role">{{ portfolio.person.title }}</p>
+      <p class="hero-text">{{ portfolio.hero.valueProposition }}</p>
+
+      <div class="actions" aria-label="Primary actions">
+        <a class="button button-primary" href="/" (click)="navigationService.scrollToSection($event, 'contact')">
+          Get in touch
+        </a>
+        <a class="button button-secondary" href="/" (click)="navigationService.scrollToSection($event, 'projects')">
+          View Projects
+        </a>
+        <a class="button button-ghost" [href]="portfolio.person.cvUrl" download="Alex-Horodnic-CV.pdf">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v12" />
+            <path d="m7 10 5 5 5-5" />
+            <path d="M5 21h14" />
+          </svg>
+          <span>Download CV</span>
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="Quick profile details">
+      @for (stat of portfolio.hero.stats; track stat.label) {
+        <div class="stat-card">
+          <span>{{ stat.label }}</span>
+          <strong>{{ stat.value }}</strong>
+        </div>
+      }
+    </aside>
+  </div>
+</section>

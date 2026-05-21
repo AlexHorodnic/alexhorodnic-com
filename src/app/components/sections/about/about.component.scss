@@ -1,0 +1,28 @@
+.section-body {
+  display: grid;
+  gap: 28px;
+}
+
+.lead {
+  width: 100%;
+  max-width: none;
+  color: var(--hero-lead);
+  font-size: clamp(1.08rem, 3.5vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.split-list {
+  display: grid;
+  gap: 18px;
+}
+
+.split-list article {
+  padding-top: 4px;
+}
+
+@media (min-width: 1040px) {
+  .split-list {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 34px;
+  }
+}

@@ -1,0 +1,28 @@
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <app-section-header eyebrow="Core Skills" title="A practical frontend toolkit." titleId="skills-title" [compact]="true" />
+
+  <div class="skill-grid" aria-label="Core frontend skills">
+    @for (skill of portfolio.skills; track skill) {
+      <app-skill-pill [skill]="skill" />
+    }
+  </div>
+
+  <div class="skill-secondary">
+    <div>
+      <p class="skill-group-title">Supporting tools</p>
+      <div class="skill-grid skill-grid-secondary" aria-label="Supporting frontend tools">
+        @for (skill of portfolio.supportingSkills; track skill) {
+          <app-skill-pill [skill]="skill" [secondary]="true" />
+        }
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-title">Backend exposure</p>
+      <div class="skill-grid skill-grid-secondary" aria-label="Secondary backend exposure">
+        @for (skill of portfolio.backendExposure; track skill) {
+          <app-skill-pill [skill]="skill" [secondary]="true" />
+        }
+      </div>
+    </div>
+  </div>
+</section>

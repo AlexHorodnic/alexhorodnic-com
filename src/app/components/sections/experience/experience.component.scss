@@ -1,0 +1,55 @@
+.timeline {
+  display: grid;
+  gap: 24px;
+}
+
+.timeline-item {
+  display: grid;
+  gap: 8px;
+}
+
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  color: var(--subtle);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-card {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, var(--accent-wash), transparent 34%),
+    var(--card-bg);
+  box-shadow: var(--card-glow);
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.company {
+  margin-bottom: 8px;
+  color: var(--subtle);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1040px) {
+  .timeline-item {
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+  }
+
+  .timeline-meta {
+    align-content: start;
+    padding-top: 22px;
+  }
+}

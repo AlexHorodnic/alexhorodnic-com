@@ -1,0 +1,9 @@
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <app-section-header eyebrow="Featured Projects" title="Selected frontend work." titleId="projects-title" [compact]="true" />
+
+  <div class="project-grid">
+    @for (project of portfolio.projects; track project.title) {
+      <app-project-card [project]="project" />
+    }
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="section section-grid" id="about" aria-labelledby="about-title">
+  <app-section-header eyebrow="About" title="Frontend work with product quality." titleId="about-title" />
+
+  <div class="section-body">
+    <p class="lead">{{ portfolio.about.summary }}</p>
+    <div class="split-list">
+      <article>
+        <h3>What I am good at</h3>
+        <ul class="check-list">
+          @for (strength of portfolio.about.strengths; track strength) {
+            <li>{{ strength }}</li>
+          }
+        </ul>
+      </article>
+      <article>
+        <h3>What I am looking for</h3>
+        <p>{{ portfolio.about.lookingFor }}</p>
+      </article>
+    </div>
+  </div>
+</section>
