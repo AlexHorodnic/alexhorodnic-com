@@ -168,18 +168,28 @@ export const portfolioData: PortfolioData = {
       githubLabel: 'View Source',
     },
     {
-      title: 'SaaS Marketing Site',
+      title: 'Vertex Storefront',
       description:
-        'Frontend marketing website concept focused on responsive layout, SEO-friendly structure, and clean product presentation.',
+        'Premium Angular ecommerce storefront and checkout experience focused on responsive UI architecture, reusable component systems, polished mobile-first interactions, and production-style frontend UX.',
       preview: 'marketing',
-      techStack: ['Angular', 'SCSS', 'SEO', 'Responsive UI'],
-      highlights: [
-        'Responsive landing page sections and hierarchy',
-        'Conversion-focused layout and spacing',
-        'Lightweight styling with accessible contrast',
+      previewImages: [
+        {
+          src: '/featured-projects/vertex-storefront/overview.png',
+          alt: 'Vertex Storefront ecommerce homepage screenshot',
+        },
       ],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/alexhorodnic/saas-marketing-site',
+      techStack: ['Angular', 'TypeScript', 'SCSS', 'Responsive UI', 'Checkout UX', 'Component Architecture'],
+      highlights: [
+        'Built responsive ecommerce storefront with polished mobile-first checkout experience',
+        'Implemented multi-step checkout flow with validation, local persistence, and animated UI states',
+        'Designed premium cart interactions, order summaries, and responsive product browsing flows',
+        'Crafted reusable Angular standalone component architecture with scalable frontend patterns',
+        'Focused heavily on responsive spacing, accessibility, UI consistency, and modern ecommerce UX polish',
+      ],
+      liveUrl: 'https://vertex-storefront.alexhorodnic.com/',
+      liveLabel: 'Live Storefront',
+      githubUrl: 'https://github.com/AlexHorodnic/vertex-storefront',
+      githubLabel: 'View Source',
     },
     {
       title: 'Booking UI Prototype',

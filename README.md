@@ -35,21 +35,22 @@ Responsive Angular SaaS dashboard focused on workflow management, operational an
 **Live demo:** [operations.alexhorodnic.com](https://operations.alexhorodnic.com)  
 **GitHub:** [github.com/alexhorodnic/operations-dashboard](https://github.com/alexhorodnic/operations-dashboard)
 
-### SaaS Marketing Site
+### Vertex Storefront
 
-Frontend marketing website concept focused on responsive layout, SEO-friendly structure, and clean product presentation.
+Premium Angular ecommerce storefront and checkout experience focused on responsive UI architecture, reusable component systems, polished mobile-first interactions, and production-style frontend UX.
 
-**Technologies:** Angular, SCSS, SEO, Responsive UI
+**Technologies:** Angular, TypeScript, SCSS, Responsive UI, Checkout UX, Component Architecture
 
 **Focus areas:**
 
-- Landing page structure and section hierarchy
-- Responsive marketing layout
-- Accessible contrast and lightweight styling
-- Product-focused presentation
+- Responsive ecommerce storefront with polished mobile-first checkout experience
+- Multi-step checkout flow with validation, local persistence, and animated UI states
+- Premium cart interactions, order summaries, and responsive product browsing flows
+- Reusable Angular standalone component architecture with scalable frontend patterns
+- Responsive spacing, accessibility, UI consistency, and modern ecommerce UX polish
 
-**Live demo:** Coming soon  
-**GitHub:** [github.com/alexhorodnic/saas-marketing-site](https://github.com/alexhorodnic/saas-marketing-site)
+**Live demo:** [vertex-storefront.alexhorodnic.com](https://vertex-storefront.alexhorodnic.com/)  
+**GitHub:** [github.com/AlexHorodnic/vertex-storefront](https://github.com/AlexHorodnic/vertex-storefront)
 
 ### Booking UI Prototype
 

@@ -12,10 +12,6 @@
 
 @media (min-width: 1040px) {
   .project-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  app-project-card:first-child {
-    grid-column: span 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

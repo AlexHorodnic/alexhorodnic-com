@@ -229,9 +229,10 @@ p {
 h1 {
   max-width: 920px;
   margin-bottom: 10px;
-  font-size: clamp(3.35rem, 13vw, 6.75rem);
+  font-size: clamp(2.9rem, 13vw, 6.75rem);
   line-height: 0.95;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 h2 {
@@ -240,6 +241,7 @@ h2 {
   font-size: clamp(2rem, 7vw, 4.2rem);
   line-height: 1;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 h3 {
@@ -336,6 +338,12 @@ li {
 .section-grid {
   display: grid;
   gap: 28px;
+}
+
+.section-grid > *,
+.project-grid > *,
+.hero-grid > * {
+  min-width: 0;
 }
 
 .check-list {
