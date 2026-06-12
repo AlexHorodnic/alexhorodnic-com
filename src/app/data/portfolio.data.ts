@@ -75,7 +75,7 @@ export const portfolioData: PortfolioData = {
     email: 'alex@alexhorodnic.com',
     linkedinUrl: 'https://www.linkedin.com/in/alex-horodnic/',
     githubUrl: 'https://github.com/alexhorodnic',
-    cvUrl: '/Alex-Horodnic-CV.pdf',
+    cvUrl: '/Alex-Horodnic-Frontend-Developer-CV.pdf',
   },
   hero: {
     eyebrow: 'Frontend Developer',
@@ -123,10 +123,10 @@ export const portfolioData: PortfolioData = {
       dates: 'July 2022 - Present',
       location: 'Athens, Greece',
       achievements: [
-        'Develop and maintain customer-facing Angular applications used in production environments.',
-        'Contribute to frontend modernization, responsive UI improvements, and production issue resolution.',
-        'Support SEO optimization and frontend performance improvements across digital products.',
-        'Collaborate with product, design, QA, and development teams in agile workflows using Git, Jira, and Bitbucket.',
+        'Delivered production Angular features and fixes across PDP, PLP, cart, and checkout flows for Greece, Cyprus, and B2B storefronts.',
+        'Implemented configuration-driven promotional and standalone service journeys, including responsive layouts, pricing, eligibility safeguards, and service-selection behavior.',
+        'Improved ecommerce SEO accuracy by enhancing product JSON-LD so Google could distinguish primary product prices from promotional and service values.',
+        'Extended cart, checkout, and analytics data contracts with availability, ratings, and delivery-related attributes while contributing to internal operational tooling with filtering, state persistence, and batch workflows.',
       ],
     },
     {
