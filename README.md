@@ -52,22 +52,6 @@ Premium Angular ecommerce storefront and checkout experience focused on responsi
 **Live demo:** [vertex-storefront.alexhorodnic.com](https://vertex-storefront.alexhorodnic.com/)  
 **GitHub:** [github.com/AlexHorodnic/vertex-storefront](https://github.com/AlexHorodnic/vertex-storefront)
 
-### Booking UI Prototype
-
-Frontend booking flow prototype designed around responsive forms, reusable UI patterns, and practical user interactions.
-
-**Technologies:** Angular, TypeScript, Forms, SCSS
-
-**Focus areas:**
-
-- Mobile-first booking interactions
-- Validation-friendly form structure
-- Reusable frontend patterns
-- Clear flow and interaction states
-
-**Live demo:** Coming soon  
-**GitHub:** [github.com/alexhorodnic/booking-ui-prototype](https://github.com/alexhorodnic/booking-ui-prototype)
-
 ## Tech Stack
 
 - Angular

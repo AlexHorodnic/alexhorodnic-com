@@ -191,20 +191,6 @@ export const portfolioData: PortfolioData = {
       githubUrl: 'https://github.com/AlexHorodnic/vertex-storefront',
       githubLabel: 'View Source',
     },
-    {
-      title: 'Booking UI Prototype',
-      description:
-        'Frontend booking flow prototype designed around responsive forms, reusable UI patterns, and practical user interactions.',
-      preview: 'booking',
-      techStack: ['Angular', 'TypeScript', 'Forms', 'SCSS'],
-      highlights: [
-        'Validation-friendly form structure',
-        'Mobile-first booking interactions',
-        'Reusable frontend component patterns',
-      ],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/alexhorodnic/booking-ui-prototype',
-    },
   ],
   services: [
     {
