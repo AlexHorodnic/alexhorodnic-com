@@ -3,7 +3,8 @@
 }
 
 .case-study {
-  width: min(100% - 32px, 1240px);
+  width: calc(100% - 32px);
+  max-width: 1240px;
   margin: 0 auto;
   padding-bottom: 64px;
 }
@@ -30,6 +31,7 @@
 
 .back-link {
   color: var(--accent-strong) !important;
+  white-space: nowrap;
 }
 
 .case-hero {
@@ -128,13 +130,22 @@
   gap: 40px;
 }
 
+.problem-grid > div:first-child h2,
+.tradeoffs-grid > div:first-child h2 {
+  margin-bottom: 0;
+}
+
 .prose {
-  max-width: 720px;
+  max-width: 64ch;
 }
 
 .prose p:last-child,
 .challenge-grid > div > p:last-child {
   margin-bottom: 0;
+}
+
+.prose p + p {
+  margin-top: 18px;
 }
 
 .prose p,
@@ -243,12 +254,12 @@
 
 @media (min-width: 760px) {
   .case-study {
-    width: min(100% - 80px, 1240px);
+    width: calc(100% - 80px);
   }
 
   .case-hero {
     grid-template-columns: minmax(0, 1fr) minmax(240px, 0.38fr);
-    align-items: end;
+    align-items: center;
   }
 
   .architecture-grid {
@@ -286,6 +297,10 @@
   .tradeoffs-grid {
     grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
     gap: 72px;
+    align-items: center;
   }
 
+  .decision-card {
+    align-self: center;
+  }
 }
