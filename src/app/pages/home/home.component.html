@@ -1,0 +1,31 @@
+<div
+  class="scroll-progress"
+  aria-hidden="true"
+  [style.transform]="'scaleX(' + navigationService.scrollProgress() + ')'"
+></div>
+
+<app-header />
+
+<main class="site-shell">
+  <app-hero />
+  <app-skills />
+  <app-projects />
+  <app-services />
+  <app-experience />
+  <app-about />
+  <app-contact />
+</main>
+
+<app-footer />
+
+<button
+  class="scroll-top"
+  type="button"
+  aria-label="Scroll to top"
+  [class.is-visible]="navigationService.showScrollTop()"
+  (click)="navigationService.scrollToTop()"
+>
+  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+    <path d="m6 15 6-6 6 6" />
+  </svg>
+</button>

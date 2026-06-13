@@ -21,6 +21,17 @@
   </ul>
 
   <div class="card-links">
+    @if (item.caseStudyPath) {
+      <a [routerLink]="item.caseStudyPath">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M5 4h14v16H5z" />
+          <path d="M8 8h8" />
+          <path d="M8 12h8" />
+          <path d="M8 16h5" />
+        </svg>
+        <span>Read Case Study</span>
+      </a>
+    }
     <a [href]="item.liveUrl" target="_blank" rel="noopener noreferrer">
       <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
         <path d="M7 17 17 7" />

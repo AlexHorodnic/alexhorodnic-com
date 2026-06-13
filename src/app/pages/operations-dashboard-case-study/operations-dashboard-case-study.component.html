@@ -1,0 +1,225 @@
+<main class="case-study">
+  <nav class="case-nav" aria-label="Case study navigation">
+    <a class="brand-link" routerLink="/" fragment="projects">
+      <img src="/favicon.svg" alt="" width="38" height="38" />
+      <span>Alex Horodnic</span>
+    </a>
+    <a class="back-link" routerLink="/" fragment="projects">Back to portfolio</a>
+  </nav>
+
+  <article>
+    <header class="case-hero">
+      <div>
+        <p class="eyebrow">Angular Frontend Case Study</p>
+        <h1>Operations Dashboard</h1>
+        <p class="case-lead">
+          A production-inspired operations workspace for monitoring account health, coordinating
+          implementation work, resolving blockers, and reviewing revenue performance.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="https://operations.alexhorodnic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View live demo</a
+          >
+          <a
+            class="button button-secondary"
+            href="https://github.com/alexhorodnic/operations-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View source</a
+          >
+        </div>
+      </div>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Role</dt>
+          <dd>Frontend developer and product designer</dd>
+        </div>
+        <div>
+          <dt>Product</dt>
+          <dd>Internal SaaS operations platform</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Architecture, responsive UX, and workflow interactions</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="hero-visual">
+      <img
+        src="/featured-projects/operations-dashboard/overview.png"
+        alt="Operations Dashboard overview page"
+        width="1440"
+        height="900"
+      />
+    </figure>
+
+    <section class="case-section problem-grid" aria-labelledby="problem-title">
+      <div>
+        <p class="eyebrow">Product Context</p>
+        <h2 id="problem-title">The problem</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Operations teams often work across account records, implementation queues, activity feeds,
+          and reporting tools. The project explores how those workflows can live in one coherent
+          interface without turning the product into a collection of disconnected admin screens.
+        </p>
+        <p>
+          I designed and built the complete frontend, including the information architecture,
+          interaction states, responsive behavior, reusable components, and realistic demo data.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="architecture-title">
+      <p class="eyebrow">Engineering Approach</p>
+      <h2 id="architecture-title">Architecture that stays readable</h2>
+      <p class="section-intro">
+        The codebase uses a feature-first Angular structure with clear boundaries between route
+        features, shared UI, core models and services, and mock data.
+      </p>
+
+      <div class="architecture-grid">
+        <article>
+          <span>01</span>
+          <h3>Feature-owned UI</h3>
+          <p>
+            Overview, accounts, workflow, and analytics own their page behavior while reusable
+            drawers, badges, KPI cards, and empty states remain shared.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Predictable state</h3>
+          <p>
+            Angular signals and computed values manage local view state. RxJS models delayed data
+            flows and cleanup uses Angular's lifecycle interop.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Deliberate styling</h3>
+          <p>
+            SCSS is split into base, layout, component, page, and responsive layers so global design
+            decisions do not leak into feature logic.
+          </p>
+        </article>
+      </div>
+
+      <div class="tag-row" aria-label="Technology stack">
+        @for (tech of techStack; track tech) {
+          <span>{{ tech }}</span>
+        }
+      </div>
+    </section>
+
+    <section class="case-section challenge-grid" aria-labelledby="challenge-title">
+      <div>
+        <p class="eyebrow">Key Challenge</p>
+        <h2 id="challenge-title">One workflow, two interaction models</h2>
+        <p>
+          A desktop Kanban board benefits from direct manipulation, but dragging cards becomes
+          awkward and error-prone on narrow touch screens.
+        </p>
+      </div>
+      <div class="decision-card">
+        <h3>The decision</h3>
+        <p>
+          Desktop users get Angular CDK drag-and-drop with visible drop targets and custom drag
+          previews. On smaller screens, dragging is disabled and the board becomes a stacked task
+          flow with explicit movement controls.
+        </p>
+        <p>
+          This trades interaction consistency for usability: the workflow remains the same, while
+          the control mechanism matches the device.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="quality-title">
+      <p class="eyebrow">Engineering Quality</p>
+      <h2 id="quality-title">Designed beyond the happy path</h2>
+      <div class="quality-grid">
+        <article>
+          <h3>Responsive behavior</h3>
+          <p>
+            Tables become cards, navigation becomes a sheet, and drawers adapt to mobile sizing.
+          </p>
+        </article>
+        <article>
+          <h3>Complete UI states</h3>
+          <p>Core pages include loading, error, empty, filtered, selection, and feedback states.</p>
+        </article>
+        <article>
+          <h3>Accessible interaction</h3>
+          <p>
+            Controls include focus states, labels, keyboard behavior, and touch-friendly targets.
+          </p>
+        </article>
+        <article>
+          <h3>Operational details</h3>
+          <p>
+            CSV export, bulk actions, task comments, activity history, and undoable deletion add
+            realism.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section gallery-section" aria-labelledby="gallery-title">
+      <p class="eyebrow">Product Walkthrough</p>
+      <h2 id="gallery-title">The complete workflow</h2>
+      <div class="gallery">
+        @for (image of gallery; track image.src) {
+          <figure [class]="'gallery-card gallery-card--' + image.layout">
+            <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+            <figcaption>{{ image.label }}</figcaption>
+          </figure>
+        }
+      </div>
+    </section>
+
+    <section class="case-section tradeoffs-grid" aria-labelledby="tradeoffs-title">
+      <div>
+        <p class="eyebrow">Tradeoffs</p>
+        <h2 id="tradeoffs-title">What this project is and is not</h2>
+      </div>
+      <div class="prose">
+        <p>
+          This is a frontend case study, not a production SaaS product. Data is mocked and state is
+          managed in the browser; there is no authentication, backend, or customer data.
+        </p>
+        <p>
+          The next engineering priority is deeper automated coverage around filtering, workflow
+          transitions, exports, and responsive interaction decisions. A real product would also
+          require API contracts, permissions, persistence, observability, and server-side
+          validation.
+        </p>
+      </div>
+    </section>
+
+    <footer class="case-cta">
+      <div>
+        <p class="eyebrow">Explore the Build</p>
+        <h2>See the decisions in action.</h2>
+      </div>
+      <div class="hero-actions">
+        <a
+          class="button button-primary"
+          href="https://operations.alexhorodnic.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open dashboard</a
+        >
+        <a class="button button-secondary" routerLink="/" fragment="projects">Back to portfolio</a>
+      </div>
+    </footer>
+  </article>
+</main>
