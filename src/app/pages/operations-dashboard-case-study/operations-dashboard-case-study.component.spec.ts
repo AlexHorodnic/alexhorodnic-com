@@ -22,6 +22,10 @@ describe('OperationsDashboardCaseStudyComponent', () => {
 
     expect(compiled.querySelector('h1')?.textContent).toContain('Operations Dashboard');
     expect(compiled.textContent).toContain('One workflow, two interaction models');
+    expect(compiled.textContent).toContain('Improvements backed by evidence');
+    expect(compiled.textContent).toContain('382.53 kB');
+    expect(compiled.textContent).toContain('19');
+    expect(compiled.textContent).toContain('GitHub Actions');
     expect(compiled.textContent).toContain('What this project is and is not');
     expect(links).toContain('View live demo');
     expect(links).toContain('View source');

@@ -165,6 +165,7 @@
 
 .architecture-grid article,
 .quality-grid article,
+.outcomes-grid div,
 .decision-card {
   padding: 24px;
   border: 1px solid var(--border);
@@ -210,6 +211,14 @@
   color: var(--accent-strong);
   font-size: 0.78rem;
   font-weight: 700;
+}
+
+.outcomes-grid dt {
+  font-size: 2rem;
+}
+
+.outcomes-grid dd {
+  margin: 0;
 }
 
 .gallery {

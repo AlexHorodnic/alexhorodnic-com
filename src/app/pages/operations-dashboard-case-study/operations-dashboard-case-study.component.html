@@ -173,6 +173,39 @@
       </div>
     </section>
 
+    <section class="case-section outcomes-section" aria-labelledby="outcomes-title">
+      <p class="eyebrow">Measured Outcomes</p>
+      <h2 id="outcomes-title">Improvements backed by evidence</h2>
+      <p class="section-intro">
+        The project is verified through automated checks, and its performance work is measured
+        against production build output rather than described only in general terms.
+      </p>
+
+      <dl class="quality-grid outcomes-grid">
+        <div>
+          <dt>31%</dt>
+          <dd>smaller initial bundle after lazy-loading route features</dd>
+        </div>
+        <div>
+          <dt>382.53 kB</dt>
+          <dd>initial production bundle, reduced from 553.08 kB</dd>
+        </div>
+        <div>
+          <dt>19</dt>
+          <dd>behavioral and route tests passing in the current suite</dd>
+        </div>
+        <div>
+          <dt>0</dt>
+          <dd>production dependency vulnerabilities at verification</dd>
+        </div>
+      </dl>
+
+      <p class="verification-note">
+        GitHub Actions runs type checking, the complete test suite, and a production build on every
+        push.
+      </p>
+    </section>
+
     <section class="case-section gallery-section" aria-labelledby="gallery-title">
       <p class="eyebrow">Product Walkthrough</p>
       <h2 id="gallery-title">The complete workflow</h2>
@@ -197,9 +230,9 @@
           managed in the browser; there is no authentication, backend, or customer data.
         </p>
         <p>
-          The next engineering priority is deeper automated coverage around filtering, workflow
-          transitions, exports, and responsive interaction decisions. A real product would also
-          require API contracts, permissions, persistence, observability, and server-side
+          Automated tests now cover the highest-value data, filtering, workflow, analytics, export,
+          and route-loading behavior. A real product would still require API contracts,
+          authentication, permissions, server persistence, observability, and server-side
           validation.
         </p>
       </div>
