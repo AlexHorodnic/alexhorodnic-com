@@ -16,6 +16,14 @@ export const routes: Routes = [
     title: 'Operations Dashboard Case Study | Alex Horodnic',
   },
   {
+    path: 'projects/vertex-storefront',
+    loadComponent: () =>
+      import('./pages/vertex-storefront-case-study/vertex-storefront-case-study.component').then(
+        (module) => module.VertexStorefrontCaseStudyComponent,
+      ),
+    title: 'Vertex Storefront Case Study | Alex Horodnic',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

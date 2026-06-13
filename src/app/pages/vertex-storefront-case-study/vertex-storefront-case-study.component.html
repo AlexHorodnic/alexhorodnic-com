@@ -1,0 +1,192 @@
+<main class="case-study">
+  <nav class="case-nav" aria-label="Case study navigation">
+    <a class="brand-link" routerLink="/" fragment="projects">
+      <img src="/favicon.svg" alt="" width="38" height="38" />
+      <span>Alex Horodnic</span>
+    </a>
+    <a class="back-link" routerLink="/" fragment="projects">Back to portfolio</a>
+  </nav>
+
+  <article>
+    <header class="case-hero">
+      <div>
+        <p class="eyebrow">Angular Commerce Case Study</p>
+        <h1>Vertex Storefront</h1>
+        <p class="case-lead">
+          A premium electronics storefront that connects product discovery, variant selection,
+          persistent cart state, and a responsive four-step checkout.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="https://vertex-storefront.alexhorodnic.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View live demo</a
+          >
+          <a
+            class="button button-secondary"
+            href="https://github.com/AlexHorodnic/vertex-storefront"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View source</a
+          >
+        </div>
+      </div>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Role</dt>
+          <dd>Frontend developer and product designer</dd>
+        </div>
+        <div>
+          <dt>Product</dt>
+          <dd>Responsive ecommerce storefront</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>State continuity, checkout UX, and responsive commerce</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="hero-visual">
+      <img
+        src="/featured-projects/vertex-storefront/overview.png"
+        alt="Vertex Storefront homepage"
+        width="1440"
+        height="900"
+      />
+    </figure>
+
+    <section class="case-section context-grid" aria-labelledby="context-title">
+      <div>
+        <p class="eyebrow">Product Context</p>
+        <h2 id="context-title">One connected buying journey</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Ecommerce interfaces often look polished in isolation but lose credibility when product
+          choices, cart contents, filters, or checkout progress stop behaving as one system.
+        </p>
+        <p>
+          I built the complete frontend journey around 40 typed demo products across 10 categories,
+          from discovery and product comparison through cart management and order confirmation.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="architecture-title">
+      <p class="eyebrow">Engineering Approach</p>
+      <h2 id="architecture-title">State follows the customer</h2>
+      <p class="section-intro">
+        Feature routes stay lazy-loaded while shared services preserve useful choices across the
+        browsing and checkout flow.
+      </p>
+
+      <div class="architecture-grid">
+        <article>
+          <span>01</span>
+          <h3>Derived commerce state</h3>
+          <p>
+            Signals and computed values keep cart quantities, subtotal, discounts, shipping, tax,
+            and final totals synchronized.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Guarded persistence</h3>
+          <p>
+            Runtime guards validate stored cart, filter, variant, and shipping data before it
+            re-enters application state.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Feature boundaries</h3>
+          <p>
+            Catalog, product detail, cart, and checkout own their behavior while reusable product
+            and feedback components stay shared.
+          </p>
+        </article>
+      </div>
+
+      <div class="tag-row" aria-label="Technology stack">
+        @for (tech of techStack; track tech) {
+          <span>{{ tech }}</span>
+        }
+      </div>
+    </section>
+
+    <section class="case-section challenge-grid" aria-labelledby="challenge-title">
+      <div>
+        <p class="eyebrow">Key Challenge</p>
+        <h2 id="challenge-title">Continuity without careless persistence</h2>
+        <p>
+          A useful checkout should remember progress, but a frontend demo should not store payment
+          details simply to feel realistic.
+        </p>
+      </div>
+      <div class="decision-card">
+        <h3>The decision</h3>
+        <p>
+          The four-step flow gates later stages behind valid shipping and payment fields. Shipping
+          details are restored after refresh through a debounced, validated snapshot.
+        </p>
+        <p>
+          Card fields are deliberately excluded from persistence. On mobile, progress condenses and
+          the primary action stays reachable in a sticky bottom bar.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section gallery-section" aria-labelledby="gallery-title">
+      <p class="eyebrow">Product Walkthrough</p>
+      <h2 id="gallery-title">From discovery to checkout</h2>
+      <div class="gallery">
+        @for (image of gallery; track image.src) {
+          <figure [class]="'gallery-card gallery-card--' + image.layout">
+            <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+            <figcaption>{{ image.label }}</figcaption>
+          </figure>
+        }
+      </div>
+    </section>
+
+    <section class="case-section tradeoffs-grid" aria-labelledby="tradeoffs-title">
+      <div>
+        <p class="eyebrow">Tradeoffs</p>
+        <h2 id="tradeoffs-title">Frontend depth, honest boundaries</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Vertex is a frontend portfolio project. Products are typed mock data, images come from
+          Unsplash, and checkout never processes or stores a real payment.
+        </p>
+        <p>
+          A production storefront would require inventory and pricing APIs, authentication,
+          server-owned carts, payment-provider tokenization, analytics, observability, and broader
+          automated test coverage.
+        </p>
+      </div>
+    </section>
+
+    <footer class="case-cta">
+      <div>
+        <p class="eyebrow">Explore the Flow</p>
+        <h2>Browse it like a customer.</h2>
+      </div>
+      <div class="hero-actions">
+        <a
+          class="button button-primary"
+          href="https://vertex-storefront.alexhorodnic.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open storefront</a
+        >
+        <a class="button button-secondary" routerLink="/" fragment="projects">Back to portfolio</a>
+      </div>
+    </footer>
+  </article>
+</main>

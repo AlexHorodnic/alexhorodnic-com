@@ -115,7 +115,14 @@ export const portfolioData: PortfolioData = {
     'Jira',
     'Figma',
   ],
-  supportingSkills: ['RxJS', 'React', 'Docker', 'Google Analytics', 'Google Tag Manager', 'Bitbucket'],
+  supportingSkills: [
+    'RxJS',
+    'React',
+    'Docker',
+    'Google Analytics',
+    'Google Tag Manager',
+    'Bitbucket',
+  ],
   backendExposure: ['Java', 'Spring Boot', 'Oracle', 'MariaDB', 'Oracle ATG'],
   experience: [
     {
@@ -170,7 +177,7 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Vertex Storefront',
       description:
-        'Premium Angular ecommerce storefront and checkout experience focused on responsive UI architecture, reusable component systems, polished mobile-first interactions, and production-style frontend UX.',
+        'A responsive Angular commerce experience spanning catalog discovery, product selection, cart state, and a deliberate multi-step checkout.',
       preview: 'marketing',
       previewImages: [
         {
@@ -178,49 +185,61 @@ export const portfolioData: PortfolioData = {
           alt: 'Vertex Storefront ecommerce homepage screenshot',
         },
       ],
-      techStack: ['Angular', 'TypeScript', 'SCSS', 'Responsive UI', 'Checkout UX', 'Component Architecture'],
+      techStack: [
+        'Angular',
+        'TypeScript',
+        'SCSS',
+        'Responsive UI',
+        'Checkout UX',
+        'Component Architecture',
+      ],
       highlights: [
-        'Built responsive ecommerce storefront with polished mobile-first checkout experience',
-        'Implemented multi-step checkout flow with validation, local persistence, and animated UI states',
-        'Designed premium cart interactions, order summaries, and responsive product browsing flows',
-        'Crafted reusable Angular standalone component architecture with scalable frontend patterns',
-        'Focused heavily on responsive spacing, accessibility, UI consistency, and modern ecommerce UX polish',
+        'Stateful catalog, product, cart, and checkout journey built with Angular signals',
+        'Four-step checkout with validation, safe shipping persistence, and responsive controls',
+        'Accessible filtering, product galleries, loading states, and mobile-first commerce patterns',
       ],
       liveUrl: 'https://vertex-storefront.alexhorodnic.com/',
       liveLabel: 'Live Storefront',
       githubUrl: 'https://github.com/AlexHorodnic/vertex-storefront',
       githubLabel: 'View Source',
+      caseStudyPath: '/projects/vertex-storefront',
     },
   ],
   services: [
     {
       title: 'Frontend debugging',
-      description: 'Layout issues, broken interactions, responsive bugs, TypeScript errors, and UI polish.',
+      description:
+        'Layout issues, broken interactions, responsive bugs, TypeScript errors, and UI polish.',
       icon: 'tool',
     },
     {
       title: 'Landing pages',
-      description: 'Responsive marketing and product pages with clean structure, strong hierarchy, and practical SEO.',
+      description:
+        'Responsive marketing and product pages with clean structure, strong hierarchy, and practical SEO.',
       icon: 'layout',
     },
     {
       title: 'Angular applications',
-      description: 'Feature implementation, component refactors, REST API integration, and maintainable UI flows.',
+      description:
+        'Feature implementation, component refactors, REST API integration, and maintainable UI flows.',
       icon: 'code',
     },
     {
       title: 'UI implementation',
-      description: 'Careful conversion of Figma designs and product requirements into production-ready interfaces.',
+      description:
+        'Careful conversion of Figma designs and product requirements into production-ready interfaces.',
       icon: 'ui',
     },
     {
       title: 'Frontend performance',
-      description: 'Focused frontend improvements for perceived speed, SEO quality, and user experience.',
+      description:
+        'Focused frontend improvements for perceived speed, SEO quality, and user experience.',
       icon: 'speed',
     },
     {
       title: 'Interface polishing',
-      description: 'Refined spacing, states, accessibility details, and visual consistency for existing interfaces.',
+      description:
+        'Refined spacing, states, accessibility details, and visual consistency for existing interfaces.',
       icon: 'agency',
     },
   ],
