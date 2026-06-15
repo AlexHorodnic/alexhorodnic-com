@@ -22,7 +22,7 @@ It highlights:
 
 Privacy-first browser-local AI workspace that runs open-source language models with WebLLM and WebGPU, indexes documents in IndexedDB, and exposes inspectable source grounding without an application inference API.
 
-**Technologies:** Angular, TypeScript, Signals, WebLLM, WebGPU, Web Workers, IndexedDB, Vitest
+**Technologies:** Angular 21, TypeScript, Signals, WebLLM, WebGPU, Web Workers, IndexedDB, Vitest
 
 **Focus areas:**
 
@@ -42,34 +42,40 @@ Privacy-first browser-local AI workspace that runs open-source language models w
 
 Responsive Angular SaaS dashboard focused on workflow management, operational analytics, scalable component architecture, and polished enterprise UI interactions.
 
-**Technologies:** Angular, TypeScript, RxJS, SCSS, Angular CDK, Responsive UI
+**Technologies:** Angular 21, TypeScript, Signals, RxJS, Angular CDK, SCSS, Vitest
 
 **Focus areas:**
 
-- Interactive dashboard and operations board experience
-- Responsive layouts for desktop and mobile workflows
-- Reusable Angular component patterns
-- Detail drawers, task states, blockers, and contextual UI
-- Dark-theme SaaS interface with polished interaction states
+- Account operations, workflow coordination, analytics, and realistic enterprise UI states
+- Device-aware workflow interactions with desktop drag-and-drop and mobile task controls
+- Feature-first route architecture with reusable drawers, cards, badges, and feedback states
+- Search, filtering, sorting, pagination, CSV export, bulk actions, and undoable deletion
+- Responsive layouts, keyboard-visible focus, and touch-friendly controls
 
-**Live demo:** [operations.alexhorodnic.com](https://operations.alexhorodnic.com)  
+**Live demo:** [operations.alexhorodnic.com](https://operations.alexhorodnic.com/)
+
+**Case study:** [alexhorodnic.com/projects/operations-dashboard](https://alexhorodnic.com/projects/operations-dashboard)
+
 **GitHub:** [github.com/alexhorodnic/operations-dashboard](https://github.com/alexhorodnic/operations-dashboard)
 
 ### Vertex Storefront
 
 Premium Angular ecommerce storefront and checkout experience focused on responsive UI architecture, reusable component systems, polished mobile-first interactions, and production-style frontend UX.
 
-**Technologies:** Angular, TypeScript, SCSS, Responsive UI, Checkout UX, Component Architecture
+**Technologies:** Angular 21, TypeScript, Signals, RxJS, Reactive Forms, SCSS, Vitest
 
 **Focus areas:**
 
-- Responsive ecommerce storefront with polished mobile-first checkout experience
-- Multi-step checkout flow with validation, local persistence, and animated UI states
-- Premium cart interactions, order summaries, and responsive product browsing flows
-- Reusable Angular standalone component architecture with scalable frontend patterns
-- Responsive spacing, accessibility, UI consistency, and modern ecommerce UX polish
+- Connected product discovery, variants, stock state, cart calculations, and checkout flow
+- Runtime-guarded persistence for carts, filters, variants, and shipping progress
+- Validated four-step checkout that deliberately excludes payment fields from persistence
+- Lazy feature routes with reusable standalone commerce and feedback components
+- Responsive catalog controls, accessible filtering, mobile progress, and sticky checkout actions
 
-**Live demo:** [vertex-storefront.alexhorodnic.com](https://vertex-storefront.alexhorodnic.com/)  
+**Live demo:** [vertex-storefront.alexhorodnic.com](https://vertex-storefront.alexhorodnic.com/)
+
+**Case study:** [alexhorodnic.com/projects/vertex-storefront](https://alexhorodnic.com/projects/vertex-storefront)
+
 **GitHub:** [github.com/AlexHorodnic/vertex-storefront](https://github.com/AlexHorodnic/vertex-storefront)
 
 ## Tech Stack
@@ -132,7 +138,7 @@ Current focus areas:
 Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 Start the development server:

@@ -6,16 +6,25 @@
       <p class="hero-text">{{ portfolio.hero.valueProposition }}</p>
 
       <div class="actions" aria-label="Primary actions">
-        <a class="button button-primary" href="/" (click)="navigationService.scrollToSection($event, 'contact')">
+        <a
+          class="button button-primary"
+          href="/"
+          (click)="navigationService.scrollToSection($event, 'contact')"
+        >
           Get in touch
         </a>
-        <a class="button button-secondary" href="/" (click)="navigationService.scrollToSection($event, 'projects')">
+        <a
+          class="button button-secondary"
+          href="/"
+          (click)="navigationService.scrollToSection($event, 'projects')"
+        >
           View Projects
         </a>
         <a
           class="button button-ghost"
           [href]="portfolio.person.cvUrl"
-          download="Alex-Horodnic-Frontend-Developer-CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
             <path d="M12 3v12" />
