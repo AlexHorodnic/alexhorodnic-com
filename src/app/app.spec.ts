@@ -69,4 +69,17 @@ describe('App', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Operations Dashboard');
     expect(compiled.textContent).toContain('One workflow, two interaction models');
   });
+
+  it('should render the Aether Workspace case study route', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+
+    await router.navigateByUrl('/projects/aether-workspace');
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Aether Workspace');
+    expect(compiled.textContent).toContain('Private by architecture');
+  });
 });

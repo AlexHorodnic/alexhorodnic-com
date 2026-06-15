@@ -18,6 +18,26 @@ It highlights:
 
 ## Featured Projects
 
+### Aether Workspace
+
+Privacy-first browser-local AI workspace that runs open-source language models with WebLLM and WebGPU, indexes documents in IndexedDB, and exposes inspectable source grounding without an application inference API.
+
+**Technologies:** Angular, TypeScript, Signals, WebLLM, WebGPU, Web Workers, IndexedDB, Vitest
+
+**Focus areas:**
+
+- Browser-local streaming inference with cancellation and automatic model fallback
+- Private PDF and text extraction, collection scoping, ranked retrieval, and citations
+- Explicit grounded, general, and no-match answer states
+- Streaming reasoning sanitization before rendering, history, or clipboard output
+- Real-device WebGPU validation alongside automated tests and CI
+
+**Live demo:** [aether-workspace.alexhorodnic.com](https://aether-workspace.alexhorodnic.com/)
+
+**Case study:** [alexhorodnic.com/projects/aether-workspace](https://alexhorodnic.com/projects/aether-workspace)
+
+**GitHub:** [github.com/AlexHorodnic/Aether-Workspace](https://github.com/AlexHorodnic/Aether-Workspace)
+
 ### Operations Dashboard
 
 Responsive Angular SaaS dashboard focused on workflow management, operational analytics, scalable component architecture, and polished enterprise UI interactions.
@@ -61,6 +81,8 @@ Premium Angular ecommerce storefront and checkout experience focused on responsi
 - SCSS
 - RxJS
 - Angular CDK
+- WebLLM and WebGPU
+- IndexedDB and Web Workers
 - Responsive and mobile-first UI
 - Git and GitHub
 - Vercel Analytics and Speed Insights
@@ -145,13 +167,9 @@ The portfolio is available at:
 
 The Angular production build outputs static assets to `dist/`, which can be deployed to Vercel or another static hosting provider.
 
-## Future Improvements
+## Case Studies
 
-- Add more project screenshots and short demo GIFs
-- Replace placeholder live links as projects are deployed
-- Expand case-study notes for selected projects
-- Add more accessibility checks and UI regression coverage
-- Continue refining mobile project previews and interaction details
+The portfolio includes detailed case studies for Aether Workspace, Operations Dashboard, and Vertex Storefront. Each documents product context, implementation decisions, tradeoffs, responsive behavior, and verified engineering outcomes rather than presenting screenshots alone.
 
 ## Contact
 

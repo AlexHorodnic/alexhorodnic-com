@@ -8,6 +8,14 @@ export const routes: Routes = [
     title: 'Alex Horodnic | Frontend Developer',
   },
   {
+    path: 'projects/aether-workspace',
+    loadComponent: () =>
+      import('./pages/aether-workspace-case-study/aether-workspace-case-study.component').then(
+        (module) => module.AetherWorkspaceCaseStudyComponent,
+      ),
+    title: 'Aether Workspace Case Study | Alex Horodnic',
+  },
+  {
     path: 'projects/operations-dashboard',
     loadComponent: () =>
       import('./pages/operations-dashboard-case-study/operations-dashboard-case-study.component').then(

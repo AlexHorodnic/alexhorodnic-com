@@ -19,7 +19,7 @@ export interface ExperienceItem {
 export interface ProjectItem {
   readonly title: string;
   readonly description: string;
-  readonly preview: 'dashboard' | 'marketing' | 'booking' | 'portfolio';
+  readonly preview: 'dashboard' | 'marketing' | 'booking' | 'portfolio' | 'workspace';
   readonly previewImages?: readonly {
     readonly src: string;
     readonly alt: string;
@@ -151,6 +151,29 @@ export const portfolioData: PortfolioData = {
     },
   ],
   projects: [
+    {
+      title: 'Aether Workspace',
+      description:
+        'A privacy-first AI workspace that runs open-source models and document retrieval entirely in the browser with WebGPU.',
+      preview: 'workspace',
+      previewImages: [
+        {
+          src: '/featured-projects/aether-workspace/chat.png',
+          alt: 'Aether Workspace local AI chat interface',
+        },
+      ],
+      techStack: ['Angular', 'TypeScript', 'WebLLM', 'WebGPU', 'IndexedDB', 'Vitest'],
+      highlights: [
+        'Browser-local model inference in a Web Worker with streaming, cancellation, and fallback',
+        'Private document indexing, source scoping, ranked retrieval, and inspectable citations',
+        'Reasoning sanitization, explicit grounding states, responsive UI, and real-device validation',
+      ],
+      liveUrl: 'https://aether-workspace.alexhorodnic.com/',
+      liveLabel: 'Open Aether',
+      githubUrl: 'https://github.com/AlexHorodnic/Aether-Workspace',
+      githubLabel: 'View Source',
+      caseStudyPath: '/projects/aether-workspace',
+    },
     {
       title: 'Operations Dashboard',
       description:

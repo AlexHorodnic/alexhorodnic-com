@@ -1,0 +1,258 @@
+<main class="case-study">
+  <nav class="case-nav" aria-label="Case study navigation">
+    <a class="brand-link" routerLink="/" fragment="projects">
+      <img src="/favicon.svg" alt="" width="38" height="38" />
+      <span>Alex Horodnic</span>
+    </a>
+    <a class="back-link" routerLink="/" fragment="projects">Back to portfolio</a>
+  </nav>
+
+  <article>
+    <header class="case-hero">
+      <div>
+        <p class="eyebrow">Browser-Local AI Case Study</p>
+        <h1>Aether Workspace</h1>
+        <p class="case-lead">
+          A private AI research workspace that runs open-source models, indexes documents, and
+          produces source-grounded answers entirely inside the browser.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="https://aether-workspace.alexhorodnic.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open live workspace</a
+          >
+          <a
+            class="button button-secondary"
+            href="https://github.com/AlexHorodnic/Aether-Workspace"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View source</a
+          >
+        </div>
+      </div>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Role</dt>
+          <dd>Frontend architect, product designer, and developer</dd>
+        </div>
+        <div>
+          <dt>Product</dt>
+          <dd>Private browser-local AI workspace</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Local inference, retrieval trust, privacy, and resilient UX</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="hero-visual">
+      <img
+        src="/featured-projects/aether-workspace/chat.png"
+        alt="Aether Workspace local AI chat interface"
+        width="1440"
+        height="900"
+      />
+    </figure>
+
+    <section class="case-section context-grid" aria-labelledby="context-title">
+      <div>
+        <p class="eyebrow">Product Context</p>
+        <h2 id="context-title">Private by architecture, not by promise</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Most AI workspaces send prompts, files, and conversation context to a hosted model. That
+          creates a privacy boundary users cannot inspect and a recurring inference cost the
+          frontend does not control.
+        </p>
+        <p>
+          Aether tests a different product decision: move inference and retrieval onto the user's
+          device. There is no application AI endpoint, no exposed API key, and no document upload
+          path. The tradeoff is that model quality and speed depend on the user's browser and GPU.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="architecture-title">
+      <p class="eyebrow">System Design</p>
+      <h2 id="architecture-title">A local pipeline with visible boundaries</h2>
+      <p class="section-intro">
+        The product separates workspace state, document retrieval, and model execution so each layer
+        can fail clearly without blocking the whole interface.
+      </p>
+
+      <div
+        class="architecture-flow architecture-flow--four"
+        aria-label="Aether local AI architecture"
+      >
+        <article>
+          <span>01</span>
+          <h3>Browser files</h3>
+          <p>PDF and text formats are extracted, validated, chunked, and indexed locally.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Private storage</h3>
+          <p>IndexedDB stores document content while guarded local state preserves preferences.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Scoped retrieval</h3>
+          <p>Users choose all sources, one collection, or general knowledge before generation.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Worker inference</h3>
+          <p>WebLLM streams model output from a Web Worker so the Angular UI stays responsive.</p>
+        </article>
+      </div>
+
+      <div class="tag-row" aria-label="Technology stack">
+        @for (tech of techStack; track tech) {
+          <span>{{ tech }}</span>
+        }
+      </div>
+    </section>
+
+    <section class="case-section challenge-grid" aria-labelledby="challenge-title">
+      <div>
+        <p class="eyebrow">Key Challenge</p>
+        <h2 id="challenge-title">Grounding must be inspectable</h2>
+        <p>
+          A source selector is dangerous if the interface implies that an answer used documents when
+          retrieval actually found nothing.
+        </p>
+      </div>
+      <div class="decision-card">
+        <h3>The decision</h3>
+        <p>
+          Every assistant message stores an explicit state: grounded, general, or no match. Grounded
+          answers expose named citations. A failed match is labeled as a general answer instead of
+          quietly borrowing credibility from the selected collection.
+        </p>
+        <p>
+          Model reasoning is removed by a streaming state machine before output can reach rendering,
+          conversation history, or the clipboard.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="resilience-title">
+      <p class="eyebrow">Product Resilience</p>
+      <h2 id="resilience-title">Local AI needs honest failure states</h2>
+      <div class="quality-grid">
+        <article>
+          <h3>Device-aware models</h3>
+          <p>
+            Four profiles explain speed and memory tradeoffs instead of promising equal quality.
+          </p>
+        </article>
+        <article>
+          <h3>Automatic fallback</h3>
+          <p>A failed larger model releases its worker and retries with the cached Fast profile.</p>
+        </article>
+        <article>
+          <h3>Controllable generation</h3>
+          <p>
+            Streaming responses support Stop, Retry, Regenerate, and reasoning-safe Copy actions.
+          </p>
+        </article>
+        <article>
+          <h3>Deliberate settings</h3>
+          <p>
+            Model, identity, theme, and response changes use explicit Save and Discard behavior.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section outcomes-section" aria-labelledby="outcomes-title">
+      <p class="eyebrow">Verification</p>
+      <h2 id="outcomes-title">Tested beyond a headless demo</h2>
+      <p class="section-intro">
+        Automated checks cover application behavior, while the defining local-inference workflow was
+        exercised in a real WebGPU Chrome session.
+      </p>
+
+      <dl class="outcomes-grid">
+        <div>
+          <dt>39</dt>
+          <dd>behavioral tests passing across chat, retrieval, storage, and navigation</dd>
+        </div>
+        <div>
+          <dt>346.93 kB</dt>
+          <dd>initial production bundle after lazy-loading the AI and PDF engines</dd>
+        </div>
+        <div>
+          <dt>0</dt>
+          <dd>production dependency vulnerabilities at the verified release</dd>
+        </div>
+        <div>
+          <dt>0 POSTs</dt>
+          <dd>application API requests observed during deployed browser validation</dd>
+        </div>
+      </dl>
+
+      <p class="verification-note">
+        Real-device checks covered model activation, streaming, Stop and Regenerate, reasoning
+        sanitization, clipboard output, source-scoped retrieval, citations, persistence, fallback,
+        responsive layouts, keyboard focus, and local document indexing.
+      </p>
+    </section>
+
+    <section class="case-section gallery-section" aria-labelledby="gallery-title">
+      <p class="eyebrow">Product Walkthrough</p>
+      <h2 id="gallery-title">One workspace, four focused surfaces</h2>
+      <div class="gallery">
+        @for (image of gallery; track image.src) {
+          <figure [class]="'gallery-card gallery-card--' + image.layout">
+            <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+            <figcaption>{{ image.label }}</figcaption>
+          </figure>
+        }
+      </div>
+    </section>
+
+    <section class="case-section tradeoffs-grid" aria-labelledby="tradeoffs-title">
+      <div>
+        <p class="eyebrow">Tradeoffs</p>
+        <h2 id="tradeoffs-title">A focused local product, not a hosted-model replacement</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Aether deliberately avoids online search, shared accounts, and server-side sync. Those
+          features need secured gateways, permissions, provider contracts, and monitoring; adding
+          them directly to the frontend would weaken the privacy model.
+        </p>
+        <p>
+          Retrieval uses lightweight lexical ranking rather than local embeddings, and small browser
+          models remain less capable than leading hosted systems. WebGPU support, download size,
+          speed, and available memory also vary by device.
+        </p>
+      </div>
+    </section>
+
+    <footer class="case-cta">
+      <div>
+        <p class="eyebrow">Try It Locally</p>
+        <h2>Inspect the workflow in your browser.</h2>
+      </div>
+      <div class="hero-actions">
+        <a
+          class="button button-primary"
+          href="https://aether-workspace.alexhorodnic.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open Aether</a
+        >
+        <a class="button button-secondary" routerLink="/" fragment="projects">Back to portfolio</a>
+      </div>
+    </footer>
+  </article>
+</main>
